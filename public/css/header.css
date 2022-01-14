@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap');
+
+.header-wrapper{
+    background-color: #1F2344;
+    position: fixed;
+    top: 0;
+    left: 120px;
+    width: calc(100vw - 120px);
+}
+
+.bg-search{
+    background-color: #1F2344;
+}
+
+.bg-violet{
+    background-color: #3B3668;
+}

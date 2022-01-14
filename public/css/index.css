@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap');
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box; 
+}
+
+html ,button, input{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'poppins', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.flex{
+    display: flex;
+}
+
+.hidden{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-between{
+    
+    justify-content: space-between;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.overflow-y-scroll{
+    overflow-y: scroll;
+}
+
+
+/* border */
+
+.outline-none{
+    border: none;
+    outline: none;
+}
+.rounded{
+    border-radius: 1rem;
+}
+
+.rounded-xxl{
+    border-radius: 5rem;
+}
+
+.rounded-xl{
+    border-radius: 3rem;
+}
+.rounded-lg{
+    border-radius: 2rem;
+}
+.rounded-sm{
+    border-radius:  15px;
+}
+
+/* colors */
+
+.bg-white{
+    background: white;
+}
+
+
+.bg-blue{
+    background-color: #7262A3;
+}
+
+
+.rounded-full{
+    border-radius: 9999px;
+}
+
+.text-black{
+    color: #1F1A30;
+}
+.text-white{
+    color: white;
+}
+
+.text-primary{
+    color: #8b6ff2;
+}
+
+.bg-dark-blue{
+    background-color: #12173D;
+}
+
+.bg-primary{
+    background: #8b6ff2;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.w-full{
+    width: 100%;
+}
+
+.h-full{
+    height: 100%;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.p-3{
+    padding: 1.5rem;
+}
+
+.p-1{
+    padding: 0.5rem;
+    
+}
+
+.gap-3{
+    gap: 1.5rem;
+}
+
+.m-10{
+    margin: 5rem;
+}
+
+.font-xl{
+    font-size: x-large;
+}
+
+.font-sm{
+    font-size: x-small;
+}
+
+.font-lg{
+    font-size: xx-large;
+}
