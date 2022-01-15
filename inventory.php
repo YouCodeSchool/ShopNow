@@ -20,19 +20,19 @@ ini_set("display_errors", "stdout");
         <link rel="stylesheet" href="public/css/inventory.css">
 </head>
 <body>  
-            <!-- <header> -->
-            <!-- Left bar -->
+    <!-- <header> -->
+    <!-- Left bar -->
 
             <div class="left-bar-container bg-color center">
 
-        <div><img class="logo" src="public\assets\images\Logo.png"></div>
+        <div><a href="#"><img class="logo" src="public\assets\images\Logo.png"></a></div>
         <!-- Switch pages : stats /inventory -->
         <div class="page-switcher">
             <div id="invent-page">
-                <h2>Inventory</h2>
+                <h2><a href="#">Inventory</a></h2>
             </div>
             <div id="stats-page">
-                <h2>Stats</h2>
+                <h2><a href="#">Stats</a></h2>
                 <div id="border-left"></div>
             </div>
         </div>
@@ -40,24 +40,26 @@ ini_set("display_errors", "stdout");
         <div class="flex flex-col center">
             <div class="flex flex-row" >
                 <div class="space-between"><img src="public/assets/images/add.svg"></div>
-                <div class="space-between"><h1>ADD</h1></div>
+                <div class="space-between"><h1><a href="#">ADD</a></h1></div>
             </div>
 
             <div class="flex flex-row" >
                 <div class="space-between"><img src="public/assets/images/update.svg"></div>
-                <div class="space-between"><h1>UPDATE</h1></div>
+                <div class="space-between"><h1><a href="#">UPDATE</a></h1></div>
             </div>
 
             <div class="flex flex-row" >
                 <div class="space-between"><img src="public/assets/images/delete.svg"></div>
-                <div class="space-between"><h1>DELETE</h1></div>
+                <div class="space-between"><h1><a href="#">DELETE</a></h1></div>
             </div>
         </div>
 
         </div>
 
-        <div class="main-page">
-            <h1 style ="color:Black;">text </h1>
+        <div class="main-page center">
+        <h1 style ="color:Black; ">text </h1>
         </div>
+
+
 </body>
 </html>

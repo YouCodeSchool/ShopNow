@@ -5,6 +5,9 @@
     font-size: 0.9rem;
     color : white;
 }
+a {
+    text-decoration: none;
+}
 .logo {
     /* object-position : center top; */
     object-position : 50% 50%;
@@ -33,11 +36,12 @@
 .main-page{
     /* float : right; */
     background-color: #292C49;
-    width: 100%;
+    width: 85%;
     height : 100%;
     position : fixed;
     overflow: auto;
     top : 0;
+    right : 0;
 }
 
 .bg-color{
