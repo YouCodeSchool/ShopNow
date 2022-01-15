@@ -171,3 +171,23 @@ a {
     color: black;
     background-color: #f1f1f1;}
 
+.inline-block{
+    /* position: relative; */
+    display :inline-block;
+}
+
+.left {
+    float : left;
+    margin : 1rem;
+}
+.right {
+    float : right;
+}
+#min-price #maxprice {
+    width : 70px;
+    /* min-width: 60px;
+    max-width: 100px; */
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-radius: 25px;
+    border : 0;
+}
