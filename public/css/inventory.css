@@ -49,7 +49,7 @@ a {
 }
 
 .color {
-    color :rgb(255, 255, 255);
+    color : #12173D;
 }
 
 .page-switcher{
@@ -142,7 +142,7 @@ a {
     width : 40%;
 }
 .margin{
-    margin : 1.1rem 5rem;
+    margin : 0 5rem;
 }
 
 .dropdown{
@@ -183,8 +183,19 @@ a {
 .right {
     float : right;
 }
-#min-price #maxprice {
-    width : 70px;
+#min-price, #max-price {
+    width : 5rem;
+    height: 0.7rem;
+    /* min-width: 60px;
+    max-width: 100px; */
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-radius: 25px;
+    border : 0;
+}
+
+#start-date, #end-date{
+    width : 10rem;
+    height: 0.7rem;
     /* min-width: 60px;
     max-width: 100px; */
     padding: 0.5rem 0 0.5rem 1rem;

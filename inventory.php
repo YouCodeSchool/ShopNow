@@ -24,7 +24,7 @@ ini_set("display_errors", "stdout");
         <!-- <header> -->
             <!-- Left bar -->
 
-        <div class="left-bar-container bg-color center">
+            <div class="left-bar-container bg-color center">
 
             <div><a href="#"><img class="logo" src="public\assets\images\Logo.png"></a></div>
             <!-- Switch pages : stats /inventory -->
@@ -42,24 +42,24 @@ ini_set("display_errors", "stdout");
                 <div class="flex flex-row" >
                     <div class="space-between"><img src="public/assets/images/add.svg"></div>
                     <div class="space-between"><h1><a href="#">ADD</a></h1></div>
-                </div>
+                 </div>
 
-                <div class="flex flex-row" >
+                 <div class="flex flex-row" >
                     <div class="space-between"><img src="public/assets/images/update.svg"></div>
                     <div class="space-between"><h1><a href="#">UPDATE</a></h1></div>
-                </div>
+                 </div>
 
-                <div class="flex flex-row" >
+                 <div class="flex flex-row" >
                     <div class="space-between"><img src="public/assets/images/delete.svg"></div>
                     <div class="space-between"><h1><a href="#">DELETE</a></h1></div>
-                </div>
+                 </div>
             </div>
 
-            </div>
+        </div>
 
-            <div class="main-page center">
-            <div class="flex flex-row center" style="width : inherit;">
-                <div class="search-container margin">
+        <div class="main-page center">
+            <div class="flex flex-row center margin" style="width : inherit;">
+                <div class="search-container space-between">
                     <form action="" for="search">
                         <div class="input-icons">
                             <i class="fas fa-search icon"></i>
@@ -67,7 +67,7 @@ ini_set("display_errors", "stdout");
                         </div>
                     </form>
                 </div>
-                <div class="cat-container">
+                <div class="cat-container space-between">
                     <form action="" for="cat">
                         <div class="input-icons dropdown">
                             <i class="fas fa-chevron-circle-down icon "></i>
@@ -82,29 +82,29 @@ ini_set("display_errors", "stdout");
                 </div>
             </div>
             <!-- filter By section -->
-            <div class="flex flex-row center bg-color">
+            <div class="flex flex-row center">
                 <div class="flex flex-row center">
                     <h2>In Stock</h2>
                     <i class="fas fa-toggle-on space-between" style="font-size: 2rem;"></i>
                 </div> 
                 <div class="flex flex-row center">
-                    <h2 >Price : Min</h2>
+                    <h2 >Price : MIN</h2>
                     <form for="min-price">
-                        <input class="space-between" type="number" id="min-price" placeholder="0.0">
+                        <input class="space-between center" type="number" id="min-price" placeholder="0.0">
                     </form>
-                    <h2 >- Max</h2>
+                    <h2 >MAX</h2>
                     <form for="max-price">
-                        <input class="space-between" type="number" id="max-price" placeholder="0.0">
+                        <input class="space-between center" type="number" id="max-price" placeholder="0.0">
                     </form>
                 </div>
                 <div class="flex flex-row center">
-                    <h2 >From : </h2>
+                    <h2 >From  </h2>
                     <form for="start-date">
-                        <input class="space-between" type="date" id="start-date" placeholder="">
+                        <input class="space-between color center" type="date" id="start-date" placeholder="dd/jj/yyyy">
                     </form>
                     <h2 >To</h2>
                     <form for="end-date">
-                        <input class="space-between" type="date" id="end-date" placeholder="">
+                        <input class="space-between color center" type="date" id="end-date" placeholder="">
                     </form>
                 </div>
             </div>
