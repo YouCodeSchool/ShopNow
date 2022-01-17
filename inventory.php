@@ -41,20 +41,20 @@ ini_set("display_errors", "stdout");
                 <!-- CRUD operations -->
                 <div class="flex flex-col center">
                     <div class="flex flex-row" >
-                        <div class="space-between"><img src="public/assets/images/add.svg"></div>
-                        <div class="space-between"><h1><a href="#">ADD</a></h1></div>
+                        <div class="space-between_CRUD"><img src="public/assets/images/add.svg"></div>
+                        <div class="space-between_CRUD"><h1><a href="#">ADD</a></h1></div>
                     </div>
 
                     <div class="flex flex-row" >
-                        <div class="space-between"><img src="public/assets/images/update.svg"></div>
-                        <div class="space-between"><h1><a href="#">UPDATE</a></h1></div>
+                        <div class="space-between_CRUD"><img src="public/assets/images/update.svg"></div>
+                        <div class="space-between_CRUD"><h1><a href="#">UPDATE</a></h1></div>
                     </div>
 
                     <div class="flex flex-row" >
-                        <div class="space-between"><img src="public/assets/images/delete.svg"></div>
-                        <div class="space-between"><h1><a href="#">DELETE</a></h1></div>
+                        <div class="space-between_CRUD"><img src="public/assets/images/delete.svg"></div>
+                        <div class="space-between_CRUD"><h1><a href="#">DELETE</a></h1></div>
                     </div>
-                </div>
+                 </div>
 
                 </div>
 
