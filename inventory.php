@@ -24,12 +24,13 @@ ini_set("display_errors", "stdout");
         <!-- <header> -->
             <!-- Left bar -->
 
-            <div class="left-bar-container bg-color center">
+
+        <div class="left-bar-container bg-color center">
 
             <div><a href="#"><img class="logo" src="public\assets\images\Logo.png"></a></div>
             <!-- Switch pages : stats /inventory -->
             <div class="page-switcher">
-                <div id="invent-page">
+                <div class="bg-color" id="invent-page">
                     <h2><a href="#">Inventory</a></h2>
                 </div>
                 <div id="stats-page">
@@ -42,22 +43,22 @@ ini_set("display_errors", "stdout");
                 <div class="flex flex-row" >
                     <div class="space-between"><img src="public/assets/images/add.svg"></div>
                     <div class="space-between"><h1><a href="#">ADD</a></h1></div>
-                 </div>
+                </div>
 
-                 <div class="flex flex-row" >
+                <div class="flex flex-row" >
                     <div class="space-between"><img src="public/assets/images/update.svg"></div>
                     <div class="space-between"><h1><a href="#">UPDATE</a></h1></div>
-                 </div>
+                </div>
 
-                 <div class="flex flex-row" >
+                <div class="flex flex-row" >
                     <div class="space-between"><img src="public/assets/images/delete.svg"></div>
                     <div class="space-between"><h1><a href="#">DELETE</a></h1></div>
-                 </div>
+                </div>
             </div>
 
-        </div>
+            </div>
 
-        <div class="main-page center">
+            <div class="main-page center">
             <div class="flex flex-row center margin" style="width : inherit;">
                 <div class="search-container space-between">
                     <form action="" for="search">
@@ -90,11 +91,11 @@ ini_set("display_errors", "stdout");
                 <div class="flex flex-row center">
                     <h2 >Price : MIN</h2>
                     <form for="min-price">
-                        <input class="space-between center" type="number" id="min-price" placeholder="0.0">
+                        <input class="space-between color center" type="number" id="min-price" placeholder="0.0">
                     </form>
                     <h2 >MAX</h2>
                     <form for="max-price">
-                        <input class="space-between center" type="number" id="max-price" placeholder="0.0">
+                        <input class="space-between color center" type="number" id="max-price" placeholder="0.0">
                     </form>
                 </div>
                 <div class="flex flex-row center">
@@ -108,7 +109,78 @@ ini_set("display_errors", "stdout");
                     </form>
                 </div>
             </div>
+
+            <!-- Products tables/pages -->
+            <div class="flex center">
+                <table style="table-layout: fixed; width : 100%;">
+                    <tr">
+                    <th></th>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Date of Creation</th>
+                    </tr>
+                    <tr>
+                    <td> Icon</td>
+                    <td>IMG</td>
+                    <td>Monkey</td>
+                    <td>0.0</td>
+                    <td>Pixel</td>
+                    <td>00/00/2022</td>
+                    </tr>
+                    <tr>
+                        <td> Icon</td>
+                        <td>IMG</td>
+                        <td>Monkey</td>
+                        <td>0.0</td>
+                        <td>Pixel</td>
+                        <td>00/00/2022</td>
+                    </tr>
+                    <tr>
+                        <td>Icon</td>
+                        <td>IMG</td>
+                        <td>Monkey</td>
+                        <td>0.0</td>
+                        <td>Pixel</td>
+                        <td>00/00/2022</td>
+                    </tr>
+                    <tr>
+                        <td> Icon</td>
+                        <td>IMG</td>
+                        <td>Monkey</td>
+                        <td>0.0</td>
+                        <td>Pixel</td>
+                        <td>00/00/2022</td>
+                    </tr>
+                    <tr>
+                        <td> Icon</td>
+                        <td>IMG</td>
+                        <td>Monkey</td>
+                        <td>0.0</td>
+                        <td>Pixel</td>
+                        <td>00/00/2022</td>
+                    </tr>
+                    <tr>
+                        <td> Icon</td>
+                        <td>IMG</td>
+                        <td>Monkey</td>
+                        <td>0.0</td>
+                        <td>Pixel</td>
+                        <td>00/00/2022</td>
+                    </tr>
+                    <tr>
+                        <td> Icon</td>
+                        <td>IMG</td>
+                        <td>Monkey</td>
+                        <td>0.0</td>
+                        <td>Pixel</td>
+                        <td>00/00/2022</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+
     
 </body>
 </html>
