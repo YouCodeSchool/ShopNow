@@ -23,7 +23,7 @@ a {
     /* float : left; */
     height : 100%;
     width : 15%;
-    max-width : 350px;
+    /* max-width : 350px; */
     margin : auto;
     padding-top : 1%;
     position : fixed;
@@ -108,7 +108,7 @@ a {
 }
 .space-between{
     /* justify-content: space-between; */
-    margin : 1rem; 
+    margin : 0 1rem; 
 }
 
 .input-field {
@@ -203,32 +203,71 @@ a {
     border : 0;
 }
 
+tr:hover {
+    background-color: #12173D;
+}
+table .active {
+    background-color: #12173D;
+}
+td a {
+    display : block;
+}
 td, th {
-    padding : 1.5rem;
+    /* padding : 1.5rem; */
     border-bottom: 1px solid #000;
     border-color: grey;
-    
+}
+
+table img{
+    width: 30%;
+    height: 30%; 
+    /* object-fit: contain; */
 }
 
 .pagination {
     display: inline-block;
   }
   
-  .pagination a {
+.pagination a {
     color: white;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
   }
   
-  .pagination a.active {
+.pagination a.active {
     background-color: #12173D;
     /* color: #12173D; */
     color : white;
     /* border : 1px solid; */
     border-color : white;
-  }
-  .pagination a:hover:not(.active) {
+}
+.pagination a:hover:not(.active) {
       background-color: white;
       color : black;
+}
+
+@media only screen and (max-width: 1000px){
+    body{
+        flex-direction : column;
     }
+    .left-bar-container{
+        flex-direction: row;
+        width : 100%;
+        /* position : relative; */
+        height : 15%;
+    }
+    .logo {
+        float : left;
+    }
+    .page-switcher{
+        margin : 0;
+    }
+    #CRUD {
+        display : none;
+    }
+
+    .main-page{
+        top : 15%;
+    }
+}
