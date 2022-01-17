@@ -209,3 +209,26 @@ td, th {
     border-color: grey;
     
 }
+
+.pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #12173D;
+    /* color: #12173D; */
+    color : white;
+    /* border : 1px solid; */
+    border-color : white;
+  }
+  .pagination a:hover:not(.active) {
+      background-color: white;
+      color : black;
+    }
