@@ -252,11 +252,13 @@ table img{
 /* .display {
     display: block;
 } */
-.ADD, .UPDATE{
+.ADD, .UPDATE, .bg-blurr{
     display : none;
+}
+.ADD, .UPDATE{
     position: absolute;
-    top : 50%;
-    height:  20%;
+    top : 30%;
+    height:  50%;
     width : 100%;
     z-index : 900;
     /* background-color: white; */
@@ -264,8 +266,32 @@ table img{
     border-bottom : 4px solid white;
 
 }
+.bg-blurr{
+    /* display : block; */
+    z-index : 899;
+    position : fixed;
+    /* height : 100%; */
+    top : 0;
+    height : 100%;
+    width : 100%;
+    /* width : inherit; */
+    background-color: rgba(255, 255, 255, 0.644);
+    filter : blur(6rem)
+}
 .ADD form, .UPDATE form {
-    margin-top : 1rem;
+    top : 30%;
+    /* margin-top : 50%; */
+    /* justify-content: center;
+    align-items: center; */
+}
+.ADD button, .UPDATE button {
+    width : 10rem;
+    height : 3rem;
+}
+.ADD input, .UPDATE input, select {
+   border-radius: 0.5rem;
+   width : 14rem;
+   height : 2.5rem;
 }
 /* .ADD form input {
     color : black;
@@ -285,6 +311,11 @@ button{
     cursor: pointer;
     font-weight: bold;
 }
+#cat_add option{
+    color : black;
+    background-color: white;
+}
+
 
 @media only screen and (max-width: 1000px){
     body{
