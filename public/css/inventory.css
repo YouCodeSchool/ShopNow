@@ -257,13 +257,13 @@ table img{
 }
 .ADD, .UPDATE{
     position: absolute;
-    top : 30%;
-    height:  50%;
+    bottom :2px ;
+    height:  280px;
     width : 100%;
     z-index : 900;
     /* background-color: white; */
-    border-top : 4px solid white;
-    border-bottom : 4px solid white;
+    border-top : 2px solid white;
+    /* border-bottom : 2px solid white; */
 
 }
 .bg-blurr{
@@ -279,10 +279,9 @@ table img{
     filter : blur(6rem)
 }
 .ADD form, .UPDATE form {
-    top : 30%;
+    top : 20%;
     /* margin-top : 50%; */
-    /* justify-content: center;
-    align-items: center; */
+    
 }
 .ADD button, .UPDATE button {
     width : 10rem;
@@ -293,9 +292,30 @@ table img{
    width : 14rem;
    height : 2.5rem;
 }
-/* .ADD form input {
+.DELETE_CONFIRM{
+    display : none;
+    /* border : 2px solid white; */
+    /* border-radius: 1rem; */
+
+}
+.Proceed{
+    /* display : block; */
+    /* border : 2px solid white; */
+    background-color:  #ff4e4e;
     color : black;
-} */
+    width : 40%;
+    height : 4rem;
+    border-radius: 1rem;
+}
+.Cancel{
+    /* display : block; */
+    /* border : 2px solid white; */
+    background-color: rgb(146, 255, 119);
+    color : black;
+    width : 40%;
+    height : 4rem;
+    border-radius: 1rem;
+}
 form ul li {
     list-style: none;
     

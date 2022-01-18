@@ -25,6 +25,7 @@ ini_set("display_errors", "stdout");
     <!-- <header> -->
     <!-- Left bar -->
 
+
     <div class="left-bar-container bg-color center">
 
         <div><a href="#"><img class="logo" src="public\assets\images\Logo.png"></a></div>
@@ -39,8 +40,8 @@ ini_set("display_errors", "stdout");
             </div>
         </div>
         <!-- CRUD operations -->
-        <div class="ADD_BUTTON flex flex-col center">
-            <div class="flex flex-row">
+        <div class="flex flex-col center">
+            <div class="ADD_BUTTON flex flex-row">
                 <div class="space-between_CRUD"><a href="#"><img src="public/assets/images/add.svg"></a></div>
                 <div class="space-between_CRUD"><h1><a href="#">ADD</a></h1></div>
             </div>
@@ -50,12 +51,24 @@ ini_set("display_errors", "stdout");
                 <div class="space-between_CRUD"><h1><a href="#">UPDATE</a></h1></div>
             </div>
 
-            <div class="flex flex-row" >
+            <div class="DELETE_BUTTON flex flex-row" >
                 <div class="space-between_CRUD"><a href="#"><img src="public/assets/images/delete.svg"></a></div>
                 <div class="space-between_CRUD"><h1><a href="#">DELETE</a></h1></div>
             </div>
         </div>
 
+        <div class="DELETE_CONFIRM">
+            <form class="flex flex-row center">
+                <button type="submit" class="Proceed space-between_CRUD">Proceed</button>
+            <!-- <div class="Proceed space-between_CRUD">
+
+            </div> -->
+                <button type="submit" class="Cancel space-between_CRUD">Cancel</button>
+            <!-- <div class="Cancel space-between_CRUD">
+
+            </div> -->
+            </form>
+        </div>
         </div>
 
         <div class="main-page center">
@@ -114,13 +127,14 @@ ini_set("display_errors", "stdout");
                     <button class="bg-color" onclick="sendData()" type="submit">FILTER</button>
                 </div>
             </form>
+
         </div>
 
         <!-- Products tables/pages -->
         <div class="flex center">
             <table style="table-layout: fixed; width : 100%;">
                 <tr>
-                    <th></th>
+                    <th><input type="checkbox" id="" name="" value=""></th>
                     <th>#</th>
                     <th>Name</th>
                     <th>Price</th>
@@ -129,7 +143,7 @@ ini_set("display_errors", "stdout");
                     </tr>
                 
                     <tr class="active">
-                    <td> Icon</td>
+                    <td><input type="checkbox" id="" name="" value=""></td>
                     <td><a href="#"><img src="https://lh3.googleusercontent.com/AavFwCYyhYPC1Sn-SubcZHAenfBQC0PYx7Zr9bQvNxHVjhrY4JZ7woCXRa-kuAiX7QJGiacgXfn845pQiIbpaW3v4nzpe8nKiscXCw=w600"></a></td>
                     <td><a href="#">Monkey</a></td>
                     <td><a href="#">0.0</a></td>
@@ -137,7 +151,7 @@ ini_set("display_errors", "stdout");
                     <td><a href="#">00/00/2022</a></td>
                     </tr>
                     <tr>
-                        <td> Icon</td>
+                        <td><input type="checkbox" id="" name="" value=""></td>
                         <td><a href="#"><img src="https://lh3.googleusercontent.com/hK3PkYvM_HaSGPxz2ZTCW3TXVaReWTe9XeGj-yEfBzbtJoaZQCmqWW2qN0QOHdy0fJkxsjaJ0wgNzb2s-oygUk1Gor_fQ-fk-C4IMg=w600"></a></td>
                         <td><a href="#">Monkey</a></td>
                         <td><a href="#">0.0</a></td>
@@ -145,7 +159,7 @@ ini_set("display_errors", "stdout");
                         <td><a href="#">00/00/2022</a></td>
                     </tr>
                     <tr>
-                        <td>Icon</td>
+                        <td><input type="checkbox" id="" name="" value=""></td>
                         <td><a href="#"><img src="https://lh3.googleusercontent.com/I76d2Kzg7DoKfGYvQHmEUNsdMp9dd-P8Vd3kErKMnbcUABl9goKO7H755maGbaaQVkUM_yxHcFYHEl7YqM-jRTLV3MTDYkh3TO2ekg=w600"></a></td>
                         <td><a href="#">Monkey</a></td>
                         <td><a href="#">0.0</a></td>
@@ -153,7 +167,7 @@ ini_set("display_errors", "stdout");
                         <td><a href="#">00/00/2022</a></td>
                     </tr>
                     <tr>
-                        <td> Icon</td>
+                        <td><input type="checkbox" id="" name="" value=""></td>
                         <td><a href="#"><img src="https://lh3.googleusercontent.com/WdxT9-tpMXozgLirIjhT-j2x4lUaLjYq7pBbzGW22cbxK9ie3W3WBzyNHSqNvPIDnBVSXjNfhQlvHxdwoI1ugX0p35M6ezsJqXgL6g=w600"></a></td>
                         <td><a href="#">Monkey</a></td>
                         <td><a href="#">0.0</a></td>
@@ -161,7 +175,7 @@ ini_set("display_errors", "stdout");
                         <td><a href="#">00/00/2022</a></td>
                     </tr>
                     <tr>
-                        <td> Icon</td>
+                        <td><input type="checkbox" id="" name="" value=""></td>
                         <td><a href="#"><img src="https://lh3.googleusercontent.com/9HoUFd3DKfRIYJqgCgDzBKBDBObEHyx2PeAysZ3MNdrie-JGM_YEXEniQJQDdlFezNhNKUfAXGvSgcKKLt1NMc7s5s8lEbtoVZTzJw=w361"></a></td>
                         <td><a href="#">Monkey</a></td>
                         <td><a href="#">0.0</a></td>
@@ -169,7 +183,7 @@ ini_set("display_errors", "stdout");
                         <td><a href="#">00/00/2022</a></td>
                     </tr>
                     <tr>
-                        <td> Icon</td>
+                        <td><input type="checkbox" id="" name="" value=""></td>
                         <td><a href="#"><img src="https://lh3.googleusercontent.com/v56aGEvNC_fdtJDsul-ankP_4HF8xmQn_5PziELrGLxsPwOCyBMHzbmiyohB6l-etGUykiAoEW2RiX9z7ZbpMXKLHrDrqk66SYP5Gmk=w600"></a></td>
                         <td><a href="#">Monkey</a></td>
                         <td><a href="#">0.0</a></td>
@@ -177,7 +191,7 @@ ini_set("display_errors", "stdout");
                         <td><a href="#">00/00/2022</a></td>
                     </tr>
                     <tr>
-                        <td> Icon</td>
+                        <td><input type="checkbox" id="" name="" value=""></td>
                         <td><a href="#"><img src="https://lh3.googleusercontent.com/LdcKUFaVIGZuCBjz1CXdWjBIDLM_71e-Z-6gyrPWVb-oglKR14Tg4GEyia3agwwMscCF3KNsYcYr8O9ETi8V0HUWpnuhJpwnbzsStw=w600"></a></td>
                         <td><a href="#">Monkey</a></td>
                         <td><a href="#">0.0</a></td>
@@ -203,46 +217,48 @@ ini_set("display_errors", "stdout");
         <div class="bg-blurr">    
         </div>
         <div class="ADD bg-color">
+            <i class="fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
             <form class="flex flex-col">
-                <ul class="flex flex-row" style="justify-content: space-evenly;">
-                    <li>
-                        <label for="NFT_Name">NFT Name:</label>
-                        <input type="text" class="color center" id="NFT_Name" name="NFT" placeholder="NFT Name"> 
-                    </li>
-                    <li>
-                        <label for="price">Price:</label>
-                        <input class="space-between center" type="number" id="price" placeholder="0.0">
-                    </li>
-                    <li>
-                        <label for="cat_add">Category:</label>
-                        <select class="color center" id="cat_add" name="product_cat">
-                            <option value="pixel">Pixel</option>
-                            <option value="2D">2D</option>
-                            <option value="3D">3D</option>
-                        </select>
-                    </li>
-                
-                    <li>
-                        <label for="start">Date of creation:</label>
-                        <input class="space-between color center" type="date" id="start" name="creation-date" value="2022-01-03" min="2022-01-03">
-                    </li>
+                    <ul class="flex flex-row" style="justify-content: space-evenly;">
+                        <li>
+                            <label for="NFT_Name">NFT Name:</label>
+                            <input type="text" class="color center" id="NFT_Name" name="NFT" placeholder="NFT Name"> 
+                        </li>
+                        <li>
+                            <label for="price">Price:</label>
+                            <input class="space-between center" type="number" id="price" placeholder="0.0">
+                        </li>
+                        <li>
+                            <label for="cat_add">Category:</label>
+                            <select class="color center" id="cat_add" name="product_cat">
+                                <option value="pixel">Pixel</option>
+                                <option value="2D">2D</option>
+                                <option value="3D">3D</option>
+                            </select>
+                        </li>
                     
-                </ul>
-                <ul>
-                    <li>
-                        <label for="NFT_src">NFT IMG Link:</label>
-                        <input type="text" style="width : 40%;" class="color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
-                    </li>
-                    <li>
-                        <button type="submit" class="color" style="background-color: white; margin-top:0.5rem" onclick="sendData()">ADD</button>
-                    </li>
-                </ul>
+                        <li>
+                            <label for="start">Date of creation:</label>
+                            <input class="space-between color center" type="date" id="start" name="creation-date" value="2022-01-03" min="2022-01-03">
+                        </li>
+                        
+                    </ul>
+                    <ul>
+                        <li>
+                            <label for="NFT_src">NFT IMG Link:</label>
+                            <input type="text" style="width : 40%;" class="color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
+                        </li>
+                        <li>
+                            <button type="submit" class="color" style="background-color: white; margin-top:0.5rem" onclick="sendData()">ADD</button>
+                        </li>
+                    </ul>
 
             </form>
 
         </div>
         
         <div class="UPDATE bg-color">
+            <i class="fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
             <form class="flex flex-col">
                 <ul class="flex flex-row" style="justify-content: space-evenly;">
                     <li>
@@ -282,6 +298,7 @@ ini_set("display_errors", "stdout");
         </div>
         </div>
 
+
 </body>
 
 <script>
@@ -291,8 +308,11 @@ ini_set("display_errors", "stdout");
         var update = document.querySelector('.UPDATE_BUTTON');
         update.addEventListener('click', dis_update);
 
-        var a = document.querySelector('.close');
-        a.addEventListener('click', close);
+        var delete_event = document.querySelector('.DELETE_BUTTON');
+        delete_event.addEventListener('click', dis_delete_confir);
+
+        // var closeX = document.querySelector('.close');
+        //     closeX.addEventListener('click', close);
 
 
         function close() {
@@ -310,7 +330,10 @@ ini_set("display_errors", "stdout");
         document.querySelector(".UPDATE").style.display = "block";
         document.querySelector(".bg-blurr").style.display = "block";
         }
-
+        function dis_delete_confir(){
+        document.querySelector(".DELETE_CONFIRM").style.display = "block";
+        document.querySelector(".bg-blurr").style.display = "block";
+        }
 
 </script>
 </html>
