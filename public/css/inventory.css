@@ -316,6 +316,9 @@ table img{
     height : 4rem;
     border-radius: 1rem;
 }
+.CLOSE{
+    cursor: pointer;
+}
 form ul li {
     list-style: none;
     
@@ -341,23 +344,49 @@ button{
     body{
         flex-direction : column;
     }
+
     .left-bar-container{
         flex-direction: row;
         width : 100%;
         /* position : relative; */
-        height : 15%;
+        height : 100%;
+        /* z-index : -7; */
     }
     .logo {
         float : left;
+        height : 80px;
+        width :80px;
+        margin : 1rem;
     }
     .page-switcher{
-        margin : 0;
+        /* position : absolute; */
+        /* right  : 0; */
+        margin : 1rem;
+        margin-top : 2rem;
+        /* float: right; */
+        width : 60%;
+        /* overflow :auto; */
     }
-    #CRUD {
-        display : none;
+    .CRUD {
+        /* display : block; */
+        /* position : absolute; */
+        flex-direction: row;
+        margin-top : 1rem;
+        margin-left : 1rem;
+        /* font-size: 5rem; */
+        width : 100%;
+    }
+    .CRUD img {
+        width : 4rem;
+        height : 4rem;
     }
 
     .main-page{
         top : 15%;
+        z-index : 999;
     }
+    .ADD_BUTTON h1, .DELETE_BUTTON h1, .UPDATE_BUTTON h1{
+        display : none;
+    }
+    
 }
