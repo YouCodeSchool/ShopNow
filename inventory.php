@@ -3,6 +3,15 @@ ini_set("error_reporting", E_ALL);
 ini_set("html_errors", true); 
 ini_set("display_errors", "stdout"); 
 ?>
+
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "shopnow";
+
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+?>
 <!-- <!DOCTYPE html> -->
 
 
@@ -70,7 +79,7 @@ ini_set("display_errors", "stdout");
         </div>
 
         <div class="main-page center">
-            <div class="flex flex-row center margin" style="width : inherit;">
+            <div class="SEARCH_MOBILE flex flex-row center margin" style="width : inherit;">
                 <div class="search-container space-between">
                     <form action="" for="search">
                         <div class="input-icons">
@@ -100,7 +109,7 @@ ini_set("display_errors", "stdout");
                     <h2>In Stock</h2>
                     <i class="fas fa-toggle-on space-between" style="font-size: 2rem;"></i>
                 </div> 
-                <form class="flex flex-row center">
+                <form class="FILTER flex flex-row center">
                     <div class="flex flex-row center">
                         <h2 >Price : MIN</h2>
                             <!-- <label for="min-price"></label> -->
@@ -205,9 +214,9 @@ ini_set("display_errors", "stdout");
                 <a href="#">1</a>
                 <a class="active" href="#">2</a>
                 <a href="#">3</a>
-                <a href="#">4</a>
+                <!-- <a href="#">4</a>
                 <a href="#">5</a>
-                <a href="#">6</a>
+                <a href="#">6</a> -->
                 <a href="#">&raquo;</a>
               </div>
 
