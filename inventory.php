@@ -1,9 +1,16 @@
-<?php
-ini_set("error_reporting", E_ALL); 
-ini_set("html_errors", true); 
-ini_set("display_errors", "stdout"); 
+
+<?php require_once 'connect_DB.php'; 
+
+$sql = "SELECT * FROM product_cat";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_all($result , MYSQLI_ASSOC);
+  } else {
+    echo "0 results";
+  }
 ?>
-<!-- <!DOCTYPE html> -->
+
 
 
 <html lang="en">
@@ -70,7 +77,7 @@ ini_set("display_errors", "stdout");
         </div>
 
         <div class="main-page center">
-            <div class="flex flex-row center margin" style="width : inherit;">
+            <div class="SEARCH_MOBILE flex flex-row center margin" style="width : inherit;">
                 <div class="search-container space-between">
                     <form action="" for="search">
                         <div class="input-icons">
@@ -100,7 +107,7 @@ ini_set("display_errors", "stdout");
                     <h2>In Stock</h2>
                     <i class="fas fa-toggle-on space-between" style="font-size: 2rem;"></i>
                 </div> 
-                <form class="flex flex-row center">
+                <form class="FILTER flex flex-row center">
                     <div class="flex flex-row center">
                         <h2 >Price : MIN</h2>
                             <!-- <label for="min-price"></label> -->
@@ -138,25 +145,25 @@ ini_set("display_errors", "stdout");
                         <th>Price</th>
                         <th>Category</th>
                         <th>Date of Creation</th>
+                        <th>actions</th>
                         </tr>
-                    
+                    <?php foreach ($row as $nft) { ?>
                         <tr class="active">
-                        <td><input type="checkbox" id="" name="" value=""></td>
-                        <td><a href="#"><img src="https://lh3.googleusercontent.com/AavFwCYyhYPC1Sn-SubcZHAenfBQC0PYx7Zr9bQvNxHVjhrY4JZ7woCXRa-kuAiX7QJGiacgXfn845pQiIbpaW3v4nzpe8nKiscXCw=w600"></a></td>
-                        <td><a href="#">Monkey</a></td>
-                        <td><a href="#">0.0</a></td>
-                        <td><a href="#">Pixel</a></td>
-                        <td><a href="#">00/00/2022</a></td>
-                        </tr>
-                        <tr>
                             <td><input type="checkbox" id="" name="" value=""></td>
-                            <td><a href="#"><img src="https://lh3.googleusercontent.com/hK3PkYvM_HaSGPxz2ZTCW3TXVaReWTe9XeGj-yEfBzbtJoaZQCmqWW2qN0QOHdy0fJkxsjaJ0wgNzb2s-oygUk1Gor_fQ-fk-C4IMg=w600"></a></td>
-                            <td><a href="#">Monkey</a></td>
+                            <td><a href="#"><img src="https://lh3.googleusercontent.com/AavFwCYyhYPC1Sn-SubcZHAenfBQC0PYx7Zr9bQvNxHVjhrY4JZ7woCXRa-kuAiX7QJGiacgXfn845pQiIbpaW3v4nzpe8nKiscXCw=w600"></a></td>
+                            <td><a href="#"><?php echo $nft['productName'] ?></a></td>
                             <td><a href="#">0.0</a></td>
                             <td><a href="#">Pixel</a></td>
                             <td><a href="#">00/00/2022</a></td>
+                            <td>
+                                <form action="crud_DB.php" method="POST">
+                                    <input type="text" name="id_product" hidden value="<?php echo $nft['id'] ?>">
+                                    <button name="delete" style="color :red; padding:1rem;" >DELETE</button>
+                                </form>
+                            </td>
                         </tr>
-                        <tr>
+                    <?php }?>
+                        <!-- <tr>
                             <td><input type="checkbox" id="" name="" value=""></td>
                             <td><a href="#"><img src="https://lh3.googleusercontent.com/I76d2Kzg7DoKfGYvQHmEUNsdMp9dd-P8Vd3kErKMnbcUABl9goKO7H755maGbaaQVkUM_yxHcFYHEl7YqM-jRTLV3MTDYkh3TO2ekg=w600"></a></td>
                             <td><a href="#">Monkey</a></td>
@@ -195,7 +202,7 @@ ini_set("display_errors", "stdout");
                             <td><a href="#">0.0</a></td>
                             <td><a href="#">Pixel</a></td>
                             <td><a href="#">00/00/2022</a></td>
-                        </tr>
+                        </tr> -->
                   </table>
             </div>
 
@@ -205,9 +212,9 @@ ini_set("display_errors", "stdout");
                 <a href="#">1</a>
                 <a class="active" href="#">2</a>
                 <a href="#">3</a>
-                <a href="#">4</a>
+                <!-- <a href="#">4</a>
                 <a href="#">5</a>
-                <a href="#">6</a>
+                <a href="#">6</a> -->
                 <a href="#">&raquo;</a>
               </div>
 
@@ -216,7 +223,7 @@ ini_set("display_errors", "stdout");
             </div>
             <div class="ADD bg-color">
                 <i class="CLOSE fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
-                <form class="flex flex-col">
+                <form action="crud_DB.php" method="POST" class="flex flex-col">
                         <ul class="flex flex-row" style="justify-content: space-evenly;">
                             <li>
                                 <label for="NFT_Name">NFT Name:</label>
@@ -224,14 +231,14 @@ ini_set("display_errors", "stdout");
                             </li>
                             <li>
                                 <label for="price">Price:</label>
-                                <input class="space-between center" type="number" id="price" placeholder="0.0">
+                                <input class="space-between center" type="number" name="price" id="price" placeholder="0.0">
                             </li>
                             <li>
                                 <label for="cat_add">Category:</label>
                                 <select class="color center" id="cat_add" name="product_cat">
-                                    <option value="pixel">Pixel</option>
-                                    <option value="2D">2D</option>
-                                    <option value="3D">3D</option>
+                                    <option value="1">Pixel</option>
+                                    <option value="2">2D</option>
+                                    <option value="3">3D</option>
                                 </select>
                             </li>
                         
@@ -247,7 +254,7 @@ ini_set("display_errors", "stdout");
                                 <input type="text" style="width : 40%;" class="color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
                             </li>
                             <li>
-                                <button type="submit" class="color" style="background-color: white; margin-top:0.5rem" onclick="sendData()">ADD</button>
+                                <button type="submit" name="add" class="color" style="background-color: white; margin-top:0.5rem" onclick="sendData()">ADD</button>
                             </li>
                         </ul>
 
@@ -297,7 +304,7 @@ ini_set("display_errors", "stdout");
         </div>
 
     
-</body>
+</body>>
 
 <script>
     var add = document.querySelector(".ADD_BUTTON");

@@ -189,6 +189,7 @@ a {
 #min-price, #max-price {
     width : 5rem;
     height: 0.7rem;
+    /* height : 100; */
     /* min-width: 60px;
     max-width: 100px; */
     padding: 0.5rem 0 0.5rem 1rem;
@@ -369,12 +370,15 @@ button{
     }
     .CRUD {
         /* display : block; */
-        /* position : absolute; */
+        position : absolute;
+        top : 8rem;
         flex-direction: row;
-        margin-top : 1rem;
+        /* margin-top : 1rem; */
         margin-left : 1rem;
         /* font-size: 5rem; */
         width : 100%;
+        /* bottom : 0; */
+        z-index : 1000;
     }
     .CRUD img {
         width : 4rem;
@@ -382,11 +386,35 @@ button{
     }
 
     .main-page{
-        top : 15%;
+        left: 0;
+        width : 100%;
+        top : 25%;
         z-index : 999;
+        background-color: #12173D;
     }
     .ADD_BUTTON h1, .DELETE_BUTTON h1, .UPDATE_BUTTON h1{
         display : none;
     }
-    
+
+    .FILTER {
+        display : block;
+        /* display: none; */
+        flex-direction: column;
+        position : absolute;
+        top : 20%;
+        height : 30%;
+        width : 100%;
+        background-color: rgba(131, 131, 131, 0.767);
+    }
+    .FILTER input, .FILTER button{
+        /* padding: 1rem 0 1rem 5rem; */
+        height : 100%;
+        
+    }
+    .SEARCH_MOBILE, .search-container{
+        margin : 0;
+    }
+    .SEARCH_MOBILE input, .search-container input{
+      background-color: #292C49;
+    }
 }
