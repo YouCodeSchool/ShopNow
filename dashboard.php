@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['user'])){
+        header("location: /ShopNow/login.php");
+    }
+    $bit = 'Bitcoin';
 ?>
 
 <html lang="en">
@@ -67,7 +72,9 @@
         <!-- body content -->
     </div>
     <div class="body w-full overflow-y-scroll">
-        <div class="header w-full"></div>
+        <div class="header w-full">
+            <?php include('header.php') ?>
+        </div>
         <div style="padding: 1rem; margin-top:7rem;" class="dashboard-wrapper rounded-sm w-full flex bg-violet ">
             <!-- left side of body content -->
             <div style="width: 60%; " class="left-side">
@@ -75,7 +82,7 @@
                     <div class="flex justify-center items-center w-full">
                         <h2 style="font-size: 59px;" class="text-white font-family:poppins;">My NFTs are My life</h2>
                     </div>
-                    <div style="width: 258px; height: 323px; border-radius: 15px; background-image: url('./public/assets/images/7087226.png'); background-position: center; background-size: cover;" class="">
+                    <div style="width: 258px; height: 323px; border-radius: 15px; background-image: url('./public/assets/images/7087226.png'); background-position: center; background-size: cover;"  class="">
                     </div>
                 </div>
                 <div style="width:1010px; height:1050; background-color:#12173D; margin-top:3rem; " class="pie rounded">
@@ -186,7 +193,7 @@
         const myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['    Bitcoin    ', '    Eutherieum    ', '    Litecoin'],
+                labels: ['   <?php echo $bit ?>    ', '    Eutherieum    ', '    Litecoin'],
                 datasets: [{
                     label: '# of Votes',
                     data: [50, 35, 15],
@@ -206,7 +213,6 @@
         });
     </script>
     <script src="./public/js/helpers/helpers.js"></script>
-    <script src="./public/js/header.js"></script>
 </body>
 
 </html>
