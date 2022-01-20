@@ -65,20 +65,17 @@ html ,button, input{
     border-radius:  15px;
 }
 
+.rounded-full{
+    border-radius: 9999px;
+}
 /* colors */
 
 .bg-white{
     background: white;
 }
 
-
 .bg-blue{
     background-color: #7262A3;
-}
-
-
-.rounded-full{
-    border-radius: 9999px;
 }
 
 .text-black{
@@ -100,6 +97,14 @@ html ,button, input{
     background: #8b6ff2;
 }
 
+.p-3{
+    padding: 1.5rem;
+}
+
+.p-1{
+    padding: 0.5rem;
+    
+}
 .cursor-pointer{
     cursor: pointer;
 }
@@ -116,14 +121,6 @@ html ,button, input{
     flex-direction: column;
 }
 
-.p-3{
-    padding: 1.5rem;
-}
-
-.p-1{
-    padding: 0.5rem;
-    
-}
 
 .gap-3{
     gap: 1.5rem;
