@@ -1,4 +1,29 @@
 <?php
+require('db.php');
+
+if (isset($_POST['login'])){
+
+    // get values of email and password from POST request
+    $email = mysqli_real_escape_string($db,$_POST['email']);
+    $password = mysqli_real_escape_string($db,$_POST['password']); 
+
+    $sql = "SELECT * FROM user where email = '$email' and pass = '$password'";
+
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $count = mysqli_num_rows($result);
+     // If result matched $email and $mypassword, table row must be 1 row
+	if($count == 1){
+        session_unset();
+        session_destroy();
+        $_SESSION['login_user'] = $email;
+        header("location: /ShopNow/dashboard.php");
+    }else {
+        $error = "Your Login Name or Password is invalid";
+     }
+}
+
+
 ?>
 
 <html lang="en">
@@ -17,14 +42,16 @@
 
 <body>
     <div class=" login-wrapper w-full h-full flex justify-center items-center">
-        <form action="/ShopNow/dashboard.php" class="login-form w-l-wrapper h-l-wrapper p-3 gap-3 flex rounded flex-col bg-wrapper shadow-wrapper">
+        <form  method="POST" class="login-form w-l-wrapper h-l-wrapper p-3 gap-3 flex rounded flex-col bg-wrapper shadow-wrapper">
             <h1 class="p-3 text-white flex justify-center items-center ">Sign In to <br/>NFT Now</h1>
             <label for="email" class="text-white pl-3">Email Adress</label>
             <input id="email" name="email" class="p-3 text-white rounded-sm form-email outline-none" type="email" placeholder="login@gmail.com" required>
             <label for="password" class="text-white pl-3">Password</label>
             <input id="password" name="password" class="p-3 text-white rounded-sm form-email outline-none" type="password" placeholder="****************" required>
+
+            <span><?php echo $error ?></span>
             <div class="flex justify-center w-full">
-                <button style="min-width:300px;" class="p-3 w-btn font-xl cursor-pointer outline-none rounded flex justify-center items-center bg-primary"><span>Login</span></button>
+                <button type="submit" name="login" style="min-width:300px;" class="p-3 w-btn font-xl cursor-pointer outline-none rounded flex justify-center items-center bg-primary"><span>Login</span></button>
             </div>
             <div class="flex justify-center w-full">
                 <span class="text-white">You don't have an account? <a class="text-primary" href="#">Create account</a></span>

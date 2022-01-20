@@ -2,16 +2,10 @@
 ini_set("error_reporting", E_ALL); 
 ini_set("html_errors", true); 
 ini_set("display_errors", "stdout"); 
+
+require('db.php');
 ?>
 
-<?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "shopnow";
-
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-?>
 <!-- <!DOCTYPE html> -->
 
 
