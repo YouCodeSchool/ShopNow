@@ -95,7 +95,6 @@ a {
     text-align: center;
     /* text-justify: inter-word; */
 }
-
 .flex{
     display : flex;
     /* justify-content: space-between; */
@@ -187,22 +186,17 @@ a {
     float : right;
 }
 #min-price, #max-price {
-    width : 5rem;
-    height: 0.7rem;
-    /* height : 100; */
-    /* min-width: 60px;
-    max-width: 100px; */
-    padding: 0.5rem 0 0.5rem 1rem;
+    width : 63px;
+    height: 2rem;
+   
     border-radius: 25px;
     border : 0;
 }
 
 #start-date, #end-date{
     width : 10rem;
-    height: 0.7rem;
-    /* min-width: 60px;
-    max-width: 100px; */
-    padding: 0.5rem 0 0.5rem 1rem;
+    height: 2rem;
+
     border-radius: 25px;
     border : 0;
 }
@@ -220,11 +214,13 @@ td, th {
     /* padding : 1.5rem; */
     border-bottom: 1px solid #000;
     border-color: grey;
+    /* text-align: center; */
 }
 
 table img{
+    /* display : block; */
     width: 30%;
-    height: 30%; 
+    height: 100%; 
     /* object-fit: contain; */
 }
 
@@ -388,7 +384,7 @@ button{
     .main-page{
         left: 0;
         width : 100%;
-        top : 25%;
+        /* top : 25%; */
         z-index : 999;
         background-color: #12173D;
     }
