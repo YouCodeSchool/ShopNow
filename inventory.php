@@ -1,5 +1,15 @@
 
+<?php
+    session_start();
+    if(!isset($_SESSION['user'])){
+        header("location: /ShopNow/login.php");
+    }
+    $bit = 'Bitcoin';
+?>
+
 <?php require_once 'connect_DB.php'; 
+
+require_once 'header.php';
 
 $sql = "SELECT * FROM product_cat";
 $result = mysqli_query($conn, $sql);
@@ -13,6 +23,8 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
+
+
 <html lang="en">
 
 <head>
@@ -23,29 +35,37 @@ if (mysqli_num_rows($result) > 0) {
         <meta name="description" content="NFT selling platform">
         <!-- <meta name="author" content=""> -->
         <meta name="application-name" content="ShopNow : Our NFT Selling Platform">
-        <title>Inventory</title>
+        <title>ShopNow</title>
+        <link rel="stylesheet" href="/ShopNow/public/css/header.css">
+        <link rel="stylesheet" href="/ShopNow/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
+
         <link rel="stylesheet" href="public/css/inventory.css">
         <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+        <!-- <style>
+           
+        </style> -->
   
 </head>
 <body class="flex flex-row">  
     <!-- <header> -->
     <!-- Left bar -->
-
+       
+    <!--     
         <div class="left-bar-container bg-color center">
 
-            <div><a href="#"><img class="logo" src="public\assets\images\Logo.png"></a></div>
+            <div><a href="#"><img class="logo" src="public\assets\images\Logo.png"></a></div> -->
             <!-- Switch pages : stats /inventory -->
-            <div class="page-switcher">
+            <!-- <div class="page-switcher">
                 <div class="bg-color" id="invent-page">
                     <h2><a href="#">Inventory</a></h2>
                 </div>
                 <div id="stats-page">
                     <h2><a href="#">Stats</a></h2>
                 </div>
-            </div>
+            </div> -->
             <!-- CRUD operations -->
-            <div class="CRUD flex flex-col center">
+            <!-- <div class="CRUD flex flex-col center">
                 <div class="ADD_BUTTON flex flex-row">
                     <div class="space-between_CRUD"><a href="#"><img src="public/assets/images/add.svg"></a></div>
                     <div class="space-between_CRUD"><h1><a href="#">ADD</a></h1></div>
@@ -60,23 +80,21 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="space-between_CRUD"><a href="#"><img src="public/assets/images/delete.svg"></a></div>
                     <div class="space-between_CRUD"><h1><a href="#">DELETE</a></h1></div>
                  </div>
-            </div>
+            </div> -->
             
-            <div class="DELETE_CONFIRM">
+            <!-- <div class="DELETE_CONFIRM">
                 <form class="flex flex-row center">
                     <button type="submit" class="Proceed space-between_CRUD">Proceed</button>
-                <!-- <div class="Proceed space-between_CRUD">
-
-                </div> -->
+            
                     <button type="submit" class="Cancel space-between_CRUD">Cancel</button>
-                <!-- <div class="Cancel space-between_CRUD">
-
-                </div> -->
                 </form>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
 
-        <div class="main-page center">
+        <div class="main-page flex flex-col center">
+            <div style="width : 100%">
+                <?php include('header.php'); ?>
+            </div>
             <div class="SEARCH_MOBILE flex flex-row center margin" style="width : inherit;">
                 <div class="search-container space-between">
                     <form action="" for="search">
@@ -103,10 +121,10 @@ if (mysqli_num_rows($result) > 0) {
             </div>
             <!-- filter By section -->
             <div class="flex flex-row center" style="margin-top : 0.8rem">
-                <div class="flex flex-row center">
+                <!-- <div class="flex flex-row center">
                     <h2>In Stock</h2>
                     <i class="fas fa-toggle-on space-between" style="font-size: 2rem;"></i>
-                </div> 
+                </div>  -->
                 <form class="FILTER flex flex-row center">
                     <div class="flex flex-row center">
                         <h2 >Price : MIN</h2>
@@ -135,6 +153,11 @@ if (mysqli_num_rows($result) > 0) {
 
             </div>
 
+            <!-- ADD PRODUCT -->
+            <div class="ADD_BUTTON" style="width:95%; padding:1rem; display:flex; justify-content:flex-end;">
+                <button style="background : none; border : none" ><a href="#"><img src="public/assets/images/add.svg"></a></button>
+            </div>
+
             <!-- Products tables/pages -->
             <div class="flex center">
                 <table style="table-layout: fixed; width : 100%;">
@@ -144,25 +167,30 @@ if (mysqli_num_rows($result) > 0) {
                         <th>Name</th>
                         <th>Price</th>
                         <th>Category</th>
-                        <th>Date of Creation</th>
-                        <th>actions</th>
+                        <th>Add Date</th>
+                        <th>Actions</th>
                         </tr>
                     <?php foreach ($row as $nft) { ?>
-                        <tr class="active">
+                        <tr id="<?php echo $nft['id']; ?>" onclick="ActivateRow('<?php echo $nft['id'];?>')">
                             <td><input type="checkbox" id="" name="" value=""></td>
-                            <td><a href="#"><img src="https://lh3.googleusercontent.com/AavFwCYyhYPC1Sn-SubcZHAenfBQC0PYx7Zr9bQvNxHVjhrY4JZ7woCXRa-kuAiX7QJGiacgXfn845pQiIbpaW3v4nzpe8nKiscXCw=w600"></a></td>
+                            <td><a href="#"><img src="<?php echo $nft['imgSrc'] ?>"></a></td>
                             <td><a href="#"><?php echo $nft['productName'] ?></a></td>
-                            <td><a href="#">0.0</a></td>
-                            <td><a href="#">Pixel</a></td>
-                            <td><a href="#">00/00/2022</a></td>
+                            <td><a href="#"><?php echo $nft['price'] ?></a></td>
+                            <td><a href="#"><?php echo $nft['catName'] ?></a></td>
+                            <td><a href="#"><?php echo $nft['createdAt']; ?></a></td>
                             <td>
-                                <form action="crud_DB.php" method="POST">
-                                    <input type="text" name="id_product" hidden value="<?php echo $nft['id'] ?>">
-                                    <button name="delete" style="color :red; padding:1rem;" >DELETE</button>
-                                </form>
+                                <div class="flex center">
+                                    <form action="crud_DB.php" method="POST">
+                                        <input type="text" name="id_product" hidden value="<?php echo $nft['id']; ?>">
+                                            <button class= "DELETE_BUTTON filter-red" name="delete" style="padding-top : 1rem; background : none; border : none" ><a href="#"><img src="public/assets/images/delete.svg"></a></button>
+                                            
+                                    </form>
+                                        <button class="UPDATE_BUTTON filter-green" name="update" style=" background : none; border : none" ><a href="#"><img src="public/assets/images/update.svg"></a></button>
+                                </div>
                             </td>
                         </tr>
-                    <?php }?>
+                    <!-- Send id of product to highlight the row if clicked -->
+                    <?php } ?>
                         <!-- <tr>
                             <td><input type="checkbox" id="" name="" value=""></td>
                             <td><a href="#"><img src="https://lh3.googleusercontent.com/I76d2Kzg7DoKfGYvQHmEUNsdMp9dd-P8Vd3kErKMnbcUABl9goKO7H755maGbaaQVkUM_yxHcFYHEl7YqM-jRTLV3MTDYkh3TO2ekg=w600"></a></td>
@@ -227,34 +255,34 @@ if (mysqli_num_rows($result) > 0) {
                         <ul class="flex flex-row" style="justify-content: space-evenly;">
                             <li>
                                 <label for="NFT_Name">NFT Name:</label>
-                                <input type="text" class="color center" id="NFT_Name" name="NFT" placeholder="NFT Name"> 
+                                <input type="text" class="space-between color center" id="NFT_Name" name="NFT" placeholder="NFT Name"> 
                             </li>
                             <li>
                                 <label for="price">Price:</label>
-                                <input class="space-between center" type="number" name="price" id="price" placeholder="0.0">
+                                <input class="space-between center color" type="number" name="price" id="price" placeholder="0.0">
                             </li>
                             <li>
                                 <label for="cat_add">Category:</label>
-                                <select class="color center" id="cat_add" name="product_cat">
+                                <select class="space-between color center" id="cat_add" name="product_cat">
                                     <option value="1">Pixel</option>
                                     <option value="2">2D</option>
                                     <option value="3">3D</option>
                                 </select>
                             </li>
                         
-                            <li>
+                            <!-- <li>
                                 <label for="start">Date of creation:</label>
                                 <input class="space-between color center" type="date" id="start" name="creation-date" value="2022-01-03" min="2022-01-03">
-                            </li>
+                            </li> -->
                             
                         </ul>
                         <ul>
                             <li>
                                 <label for="NFT_src">NFT IMG Link:</label>
-                                <input type="text" style="width : 40%;" class="color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
+                                <input type="text" style="width : 40%;" class="space-between color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
                             </li>
                             <li>
-                                <button type="submit" name="add" class="color" style="background-color: white; margin-top:0.5rem" onclick="sendData()">ADD</button>
+                                <button type="submit" name="add" class="color" style="background-color: white; margin-top:0.5rem">ADD</button>
                             </li>
                         </ul>
 
@@ -263,42 +291,41 @@ if (mysqli_num_rows($result) > 0) {
               </div>
               
               <div class="UPDATE bg-color">
-                <i class="CLOSE fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
-                <form class="flex flex-col">
-                    <ul class="flex flex-row" style="justify-content: space-evenly;">
-                        <li>
-                            <label for="NFT_Name">NFT Name:</label>
-                            <input type="text" class="color center" id="NFT_Name" name="NFT" placeholder="NFT Name"> 
-                        </li>
-                        <li>
-                            <label for="price">Price:</label>
-                            <input class="space-between center" type="number" id="price" placeholder="0.0">
-                        </li>
-                        <li>
-                            <label for="cat_add">Category:</label>
-                            <select class="color center" id="cat_add" name="product_cat">
-                                <option value="pixel">Pixel</option>
-                                <option value="2D">2D</option>
-                                <option value="3D">3D</option>
-                            </select>
-                        </li>
-                    
-                        <li>
-                            <label for="start">Date of creation:</label>
-                            <input class="space-between color center" type="date" id="start" name="creation-date" value="2022-01-03" min="2022-01-03">
-                        </li>
+                <i class="CLOSE_UP fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
+                <form action="crud_DB.php" method="POST" class="flex flex-col">
+                        <ul class="flex flex-row" style="justify-content: space-evenly;">
+                            <li>
+                                <label for="NFT_Name">NFT Name:</label>
+                                <input type="text" class="space-between color center" id="NFT_Name" name="NFT" placeholder="NFT Name"> 
+                            </li>
+                            <li>
+                                <label for="price">Price:</label>
+                                <input class="space-between center color" type="number" name="price" id="price" placeholder="0.0">
+                            </li>
+                            <li>
+                                <label for="cat_add">Category:</label>
+                                <select class="space-between color center" id="cat_add" name="product_cat">
+                                    <option value="1">Pixel</option>
+                                    <option value="2">2D</option>
+                                    <option value="3">3D</option>
+                                </select>
+                            </li>
                         
-                    </ul>
-                    <ul>
-                        <li>
-                            <label for="NFT_src">NFT IMG Link:</label>
-                            <input type="text" style="width : 40%" class="color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
-                        </li>
-                        <li>
-                            <button type="submit" class="color" style="background-color: white; margin-top:0.5rem" onclick="sendData()">UPDATE</button>
-                        </li>
-                    </ul>
+                            <!-- <li>
+                                <label for="start">Date of creation:</label>
+                                <input class="space-between color center" type="date" id="start" name="creation-date" value="2022-01-03" min="2022-01-03">
+                            </li> -->   
+                        </ul>
 
+                        <ul>
+                            <li>
+                                <label for="NFT_src">NFT IMG Link:</label>
+                                <input type="text" style="width : 40%;" class="space-between color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
+                            </li>
+                            <li>
+                                <button type="submit" name="update" class="color" style="background-color: white; margin-top:0.5rem">UPDATE</button>
+                            </li>
+                        </ul>
                 </form>
             </div>
         </div>
@@ -313,19 +340,20 @@ if (mysqli_num_rows($result) > 0) {
     var update = document.querySelector('.UPDATE_BUTTON');
         update.addEventListener('click', dis_update);
 
-    var delete_event = document.querySelector('.DELETE_BUTTON');
-        delete_event.addEventListener('click', dis_delete_confir);
+    // var delete_event = document.querySelector('.DELETE_BUTTON');
+    //     delete_event.addEventListener('click', dis_delete_confir);
 
     var closeX = document.querySelector('.CLOSE');
         closeX.addEventListener('click', close);
-
+    var closeX_2 = document.querySelector('.CLOSE_UP');
+        closeX_2.addEventListener('click', close);
 
     function close() {
             document.querySelector(".ADD").style.display = "none";
             document.querySelector(".UPDATE").style.display = "none";
             document.querySelector(".bg-blurr").style.display = "none";
     }
-
+    
     function dis_add(){
         // alert(1);
         document.querySelector(".ADD").style.display = "block";
@@ -336,9 +364,14 @@ if (mysqli_num_rows($result) > 0) {
         document.querySelector(".UPDATE").style.display = "block";
         document.querySelector(".bg-blurr").style.display = "block";
     }
-    function dis_delete_confir(){
-        document.querySelector(".DELETE_CONFIRM").style.display = "block";
-        document.querySelector(".bg-blurr").style.display = "block";
+    // function dis_delete_confir(){
+    //     document.querySelector(".DELETE_CONFIRM").style.display = "block";
+    //     document.querySelector(".bg-blurr").style.display = "block";
+    // }
+
+    function ActivateRow(id){
+        let row = document.getElementById(id);
+        row.classList.add("active");
     }
 
 </script>
