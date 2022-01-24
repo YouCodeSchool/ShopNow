@@ -9,7 +9,7 @@ let sidebar = `
 <div style="margin-right:1rem; " class="">
 
 <!-- icon dashboard -->
-<a href="/ShopNow2/Dashboard.php">
+<a href="/ShopNow/Dashboard.php">
 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style="width:100%; margin-top: 4rem; fill:#000000;">
     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
         <path d="M0,172v-172h172v172z" fill="none"></path>
@@ -21,7 +21,7 @@ let sidebar = `
 </a>
 
 <!-- icon inventory -->
-<a href="/ShopNow2/inventory.php">
+<a href="/ShopNow/inventory.php">
 <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style="width:100%; margin-top: 4rem; fill:#000000;">
     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
         <path d="M0,172v-172h172v172z" fill="none"></path>
@@ -33,7 +33,7 @@ let sidebar = `
 </a>
 
 <!-- icon statistics -->
-<a href="/ShopNow2/statistic.php">
+<a href="/ShopNow/statistic.php">
 <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 226 226" style="width:100%; margin-top: 4rem; fill:#000000;">
     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
         <path d="M0,226v-226h226v226z" fill="none"></path>
