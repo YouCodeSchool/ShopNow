@@ -23,7 +23,7 @@ if (mysqli_num_rows($result) > 0) {
         <meta name="description" content="NFT selling platform">
         <!-- <meta name="author" content=""> -->
         <meta name="application-name" content="ShopNow : Our NFT Selling Platform">
-        <title>ShopNow</title>
+        <title>Inventory</title>
         <link rel="stylesheet" href="public/css/inventory.css">
         <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
   

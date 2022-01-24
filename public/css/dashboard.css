@@ -15,3 +15,68 @@ body{
 .fdht{
     background-color: rgba(255, 202, 58, 0.705);
 }
+.left-side{
+    width: 60% !important;
+}
+.right-side{
+    width: 38% !important;
+}
+.dashboard-wrapper{
+    gap: 30px;
+}
+
+.cards-wrapper{
+    height: max-content;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .dashboard-wrapper{
+        display: block;
+    }
+    .left-side{
+        width: 100% !important;
+    }
+    .right-side{
+        margin-left: 0rem;
+        margin-top: 2rem;
+        width:100% !important;
+    }
+    .cards-wrapper{
+        width: 100%;
+        height: fit-content;
+    }
+    .sidebar{
+        display:none;
+    }
+    .cards-wrapper{
+        display: block;
+    }
+    .img{
+        display: flex;
+        justify-content: center;
+    }
+    .h3{
+        display: flex;
+        justify-content: center;
+    }
+    .img{
+        padding: 30px 0px ;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .text-content{
+        margin-left:0rem    !important;
+        justify-content: flex-start;
+    }
+    
+    .img > div{
+        margin-left: 0!important;
+        width: 307px !important;
+        height: 306px !important;
+    }
+    .pie{
+        height: 45% !important;
+    }
+}
