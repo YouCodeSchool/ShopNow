@@ -7,7 +7,7 @@
     $bit = 'Bitcoin';
 ?>
 
-<?php require_once 'connect_DB.php'; 
+<?php require('db.php'); 
 
 require_once 'header.php';
 

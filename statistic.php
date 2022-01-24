@@ -29,30 +29,11 @@
         </div>
         <div style="padding:1rem; flex-direction:column;" class="statistic-wrapper rounded-sm w-full flex bg-violet ">
             <div class="top w-full">
-                <div style="background-color:#12173D; " class="pie2 rounded">
-                <p style="color: forestgreen;">fukgkyk</p>
-                    <canvas id="myChart1" width="800" height="800"></canvas>
-                </div>
-
-            </div>
-            <div style="width:100%;">
-
-                <!-- left side of body content -->
-                <div class="left-side-sta">
-                    <div class="flex justify-center" style="width:100%; height:100%;">
-
-                        <div style="width:100%; height:75%; background-color:#12173D; margin-top:3rem; " class="pie2 rounded">
-                            <canvas id="myChart2" style="width:800; height:800;"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <!-- end left side of body content -->
-            </div>
-        </div>
-
-
-
-    </div>
+                
+                <div style="background-color: #12173D; margin-top:5rem;" class="pie2 rounded">
+                    <div>
+                        <canvas style="background-color: white; width:80%;" id="myChart1" ></canvas>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const ctx1 = document.getElementById('myChart1');
         const labels = Utils.months({
@@ -69,6 +50,27 @@
             }]
         };
     </script>
+                </div>
+                </div>
+
+            </div>
+            <div style="width:100%;">
+
+                <!-- left side of body content -->
+                <div class="left-side-sta">
+                    <div class="flex justify-center" style="width:100%; height:100%;">
+                        <div style="width:100%; height:75%; background-color : #12173D; margin-top:3rem; " class="pie2 rounded">
+                            <canvas id="myChart2" style="width:800; height:800;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- end left side of body content -->
+            </div>
+        </div>
+
+
+
+    </div>
     <script>
         const ctx = document.getElementById('myChart2');
         const myChart = new Chart(ctx, {

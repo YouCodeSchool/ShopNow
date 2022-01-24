@@ -1,3 +1,5 @@
+<?php
+?>
 <div class="header-wrapper flex p-1 justify-between items-center">
     <h1 id="title-header" class="dashboard-text text-white cursor-pointer ">Dashboard</h1>
     <div style="width:40px; height:40px;" >
