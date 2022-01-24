@@ -1,5 +1,6 @@
 <?php
-require('connect_DB.php');
+require('db.php');
+
 $error = "";
 session_start(); 
 
@@ -12,7 +13,7 @@ if (isset($_POST['email'])){
     $email = mysqli_real_escape_string($conn,$_POST['email']);
     $password = mysqli_real_escape_string($conn,$_POST['password']); 
 
-    $sql = "SELECT * FROM `user` where email = '$email' and pass = '$password'";
+    $sql = "SELECT * FROM user where email = '$email' and pass = '$password'";
 
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -20,7 +21,7 @@ if (isset($_POST['email'])){
      // If result matched $email and $mypassword, table row must be 1 row
 	if($count == 1){
         $_SESSION['user'] = $_POST['email'];
-        header("location: /shopnow/dashboard.php");
+        header("location: /ShopNow/dashboard.php");
     }else {
         $error = "Your Login Name or Password is invalid";
      }
