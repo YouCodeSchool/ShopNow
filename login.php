@@ -56,10 +56,17 @@ if (isset($_POST['email'])){
                 <button style="min-width:300px;" class="p-3 w-btn font-xl cursor-pointer outline-none rounded flex justify-center items-center bg-primary"><span>Login</span></button>
             </div>
             <div class="flex justify-center w-full">
-                <span class="text-white">You don't have an account? <a class="text-primary" href="#">Create account</a></span>
+                <span class="text-white">You don't have an account? <a class="text-primary" href="/ShopNow2/Signup.php">Create account</a></span>
             </div>
         </form>
     </div>
 </body>
+
+
+
+
+
+
+
 
 </html>

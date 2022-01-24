@@ -1,10 +1,10 @@
-
-
 <div class="header-wrapper flex p-1 justify-between items-center">
-    <h1 class="text-white cursor-pointer ">Dashboard</h1>
+    <h1 id="title-header" class="dashboard-text text-white cursor-pointer ">Dashboard</h1>
+    <div style="width:40px; height:40px;" >
+        <img class="logo" style="width: 100%; height:100%; object-fit: cover;" src="./public/assets/images/NFTlogo.png" alt="NFT logo">
+    </div>
     <div class="flex gap-3">
-
-        <span id="hello"  class="text-white">Hello <?php echo explode('@' ,$_SESSION['user'])[0]; ?></span>
+        <span id="hello"  class="text-white">Hello  <?php  echo explode('@' ,$_SESSION['user'])[0]; ?></span>
         
         <form class="search-wrapper flex gap-3 bg-dark-blue rounded-sm ">
             <input id="search" name="search" class="bg-dark-blue p-1 outline-none rounded-sm text-white font-sm" type="text" placeholder="  Search..">
@@ -12,7 +12,7 @@
                     <i class="fas fa-search text-white"></i>
                 </button>
         </form>
-        <form method="POST" action="/ShopNow/logout.php" class="user bg-violet p-1 cursor-pointer rounded-full">
+        <form method="POST" action="/ShopNow/logout.php" id="checkLogout" class="user bg-violet p-1 cursor-pointer rounded-full">
             <button style="background: #00000000;" class="outline-none border-none" type="submit"  >
                 <i class="fas fa-user text-white  cursor-pointer"></i>
             </button>
@@ -25,5 +25,9 @@
         $('#hello').remove()
     }, 2000);
 </script>
+<script>
+    (location.pathname.toLowerCase().includes('statistic')) ? document.querySelector('#title-header').innerHTML='Statistics' : null
+</script>
+
 
 

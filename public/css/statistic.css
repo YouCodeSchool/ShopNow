@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap');
+
+body{
+    background: linear-gradient(rgba(118, 106, 178, 0.89) 0%, #342382 100%);
+}
+
+.w-full{
+    width: 100%;
+}
+
+.h-full{
+    height: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+.hidden{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-between{
+    
+    justify-content: space-between;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.overflow-y-scroll{
+    overflow-y: scroll;
+}
+
+.left-side-sta{
+    width: 50%;
+    
+}
+
