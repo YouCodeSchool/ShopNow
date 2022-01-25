@@ -2,7 +2,7 @@
 require('db.php');
 
 $error = "";
-session_start(); 
+session_start();
 
 if(isset($_SESSION['user'])){
     header("location: dashboard.php");
@@ -21,7 +21,9 @@ if (isset($_POST['email'])){
      // If result matched $email and $mypassword, table row must be 1 row
 	if($count == 1){
         $_SESSION['user'] = $_POST['email'];
-        header("location: /ShopNow/dashboard.php");
+        $error = $_SESSION;
+        header("location:  /ShopNow2/dashboard.php");
+
     }else {
         $error = "Your Login Name or Password is invalid";
      }
@@ -36,8 +38,8 @@ if (isset($_POST['email'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fontawesome.com/">
-    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
-    <link rel="stylesheet" href="/ShopNow/public/css/login.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/login.css">
     <script src="./public/js/helpers/helpers.js" defer ></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
     <title>Login</title>
@@ -51,7 +53,7 @@ if (isset($_POST['email'])){
             <input id="email" name="email" class="p-3 text-white rounded-sm form-email outline-none" type="email" placeholder="login@gmail.com" required>
             <label for="password" class="text-white pl-3">Password</label>
             <input id="password" name="password" class="p-3 text-white rounded-sm form-email outline-none" type="password" placeholder="****************" required>
-            <span class="text-white" ><?php echo $error ?></span>
+            <span class="text-white" ><?php var_dump($error) ?></span>
             <div class="flex justify-center w-full">
                 <button style="min-width:300px;" class="p-3 w-btn font-xl cursor-pointer outline-none rounded flex justify-center items-center bg-primary"><span>Login</span></button>
             </div>

@@ -1,24 +1,22 @@
-
 <?php
-    session_start();
-    if(!isset($_SESSION['user'])){
-        header("location: /ShopNow/login.php");
-    }
-    $bit = 'Bitcoin';
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("location: /ShopNow2/login.php");
+}
+$bit = 'Bitcoin';
 ?>
 
-<?php require('db.php'); 
+<?php require('db.php');
 
-require_once 'header.php';
 
 $sql = "SELECT * FROM product_cat";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_all($result , MYSQLI_ASSOC);
-  } else {
+    $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+} else {
     echo "0 results";
-  }
+}
 ?>
 
 
@@ -28,351 +26,245 @@ if (mysqli_num_rows($result) > 0) {
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">  
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="NFT, digital art, property">
-        <meta name="description" content="NFT selling platform">
-        <!-- <meta name="author" content=""> -->
-        <meta name="application-name" content="ShopNow : Our NFT Selling Platform">
-        <title>ShopNow</title>
-        <link rel="stylesheet" href="/ShopNow/public/css/header.css">
-        <link rel="stylesheet" href="/ShopNow/public/css/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="NFT, digital art, property">
+    <meta name="description" content="NFT selling platform">
+    <meta name="application-name" content="ShopNow : Our NFT Selling Platform">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="/ShopNow/public/css/header.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
     <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
 
-        <link rel="stylesheet" href="public/css/inventory.css">
-        <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
-        <!-- <style>
-           
-        </style> -->
-  
+    <link rel="stylesheet" href="public/css/inventory.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+
 </head>
-<body class="flex flex-row">  
-    <!-- <header> -->
-    <!-- Left bar -->
-       
-    <!--     
-        <div class="left-bar-container bg-color center">
 
-            <div><a href="#"><img class="logo" src="public\assets\images\Logo.png"></a></div> -->
-            <!-- Switch pages : stats /inventory -->
-            <!-- <div class="page-switcher">
-                <div class="bg-color" id="invent-page">
-                    <h2><a href="#">Inventory</a></h2>
-                </div>
-                <div id="stats-page">
-                    <h2><a href="#">Stats</a></h2>
-                </div>
-            </div> -->
-            <!-- CRUD operations -->
-            <!-- <div class="CRUD flex flex-col center">
-                <div class="ADD_BUTTON flex flex-row">
-                    <div class="space-between_CRUD"><a href="#"><img src="public/assets/images/add.svg"></a></div>
-                    <div class="space-between_CRUD"><h1><a href="#">ADD</a></h1></div>
-                 </div>
-
-                 <div class="UPDATE_BUTTON flex flex-row" >
-                    <div class="space-between_CRUD"><a href="#"><img src="public/assets/images/update.svg"></a></div>
-                    <div class="space-between_CRUD"><h1><a href="#">UPDATE</a></h1></div>
-                 </div>
-
-                 <div class="DELETE_BUTTON flex flex-row" >
-                    <div class="space-between_CRUD"><a href="#"><img src="public/assets/images/delete.svg"></a></div>
-                    <div class="space-between_CRUD"><h1><a href="#">DELETE</a></h1></div>
-                 </div>
-            </div> -->
-            
-            <!-- <div class="DELETE_CONFIRM">
-                <form class="flex flex-row center">
-                    <button type="submit" class="Proceed space-between_CRUD">Proceed</button>
-            
-                    <button type="submit" class="Cancel space-between_CRUD">Cancel</button>
+<body class="flex flex-row">
+    <!-- side bar -->
+    <div style="overflow: hidden; position:fixed; left: 0; width: calc(16vw - 147px); height:100%; background-color: #1F2344; " class="sidebar">
+    </div>
+    <!-- end side bar -->
+    <div class="main-page">
+        <div style="width : 100%">
+            <?php include('header.php'); ?>
+        </div>
+        <div class="SEARCH_MOBILE ">
+            <div class="search-container space-between">
+                <form action="" for="search">
+                    <div class="input-icons">
+                        <i class="fas fa-search icon"></i>
+                        <input type="text" class="bg-color input-field" id="search" name="searchByName" placeholder="Search">
+                    </div>
                 </form>
-            </div> -->
-        <!-- </div> -->
-
-        <div class="main-page flex flex-col center">
-            <div style="width : 100%">
-                <?php include('header.php'); ?>
             </div>
-            <div class="SEARCH_MOBILE flex flex-row center margin" style="width : inherit;">
-                <div class="search-container space-between">
-                    <form action="" for="search">
-                        <div class="input-icons">
-                            <i class="fas fa-search icon"></i>
-                            <input type="text" class="bg-color input-field" id="search" name="searchByName" placeholder="Search"> 
+            <div class="cat-container space-between">
+                <form action="" for="cat">
+                    <div class="input-icons dropdown">
+                        <i class="fas fa-chevron-circle-down icon "></i>
+                        <div class="dropdown-content">
+                            <a href="#">All Categories</a>
+                            <a href="#">Pixel Art</a>
+                            <a href="#">2D Graphics</a>
+                            <a href="#">3D Graphics</a>
                         </div>
-                    </form>
-                </div>
-                <div class="cat-container space-between">
-                    <form action="" for="cat">
-                        <div class="input-icons dropdown">
-                            <i class="fas fa-chevron-circle-down icon "></i>
-                            <div class="dropdown-content">
-                                <a href="#">All Categories</a>
-                                <a href="#">Pixel Art</a>
-                                <a href="#">2D Graphics</a>
-                                <a href="#">3D Graphics</a>
-                            </div>
-                            <input type="text" class="bg-color input-field" id="cat" name="searchByCat" placeholder="All Categories"> 
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- filter By section -->
-            <div class="flex flex-row center" style="margin-top : 0.8rem">
-                <!-- <div class="flex flex-row center">
-                    <h2>In Stock</h2>
-                    <i class="fas fa-toggle-on space-between" style="font-size: 2rem;"></i>
-                </div>  -->
-                <form class="FILTER flex flex-row center">
-                    <div class="flex flex-row center">
-                        <h2 >Price : MIN</h2>
-                            <!-- <label for="min-price"></label> -->
-                            <input class="space-between color center" type="number" id="min-price" placeholder="0.0">
-                        
-                        <h2 >MAX</h2>
-                        <!-- <form for="max-price"> -->
-                            <input class="space-between color center" type="number" id="max-price" placeholder="0.0">
-                        <!-- </form> -->
+                        <input type="text" class="bg-color input-field" id="cat" name="searchByCat" placeholder="All Categories">
                     </div>
-                    <div class="flex flex-row center">
-                        <h2 >From  </h2>
-                        <!-- <form for="start-date"> -->
-                            <input class="space-between color center" type="date" id="start-date" placeholder="dd/jj/yyyy">
-                        <!-- </form> -->
-                        <h2 >To</h2>
-                        <!-- <form for="end-date"> -->
-                            <input class="space-between color center" type="date" id="end-date" placeholder="">
-                        <!-- </form> -->
-                    </div>
-                    <div >
-                        <button class="bg-color" onclick="sendData()" type="submit">FILTER</button>
-                    </div>
-                </form>
-
-            </div>
-
-            <!-- ADD PRODUCT -->
-            <div class="ADD_BUTTON" style="width:95%; padding:1rem; display:flex; justify-content:flex-end;">
-                <button style="background : none; border : none" ><a href="#"><img src="public/assets/images/add.svg"></a></button>
-            </div>
-
-            <!-- Products tables/pages -->
-            <div class="flex center">
-                <table style="table-layout: fixed; width : 100%;">
-                    <tr>
-                        <th><input type="checkbox" id="" name="" value=""></th>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Add Date</th>
-                        <th>Actions</th>
-                        </tr>
-                    <?php foreach ($row as $nft) { ?>
-                        <tr id="<?php echo $nft['id']; ?>" onclick="ActivateRow('<?php echo $nft['id'];?>')">
-                            <td><input type="checkbox" id="" name="" value=""></td>
-                            <td><a href="#"><img src="<?php echo $nft['imgSrc'] ?>"></a></td>
-                            <td><a href="#"><?php echo $nft['productName'] ?></a></td>
-                            <td><a href="#"><?php echo $nft['price'] ?></a></td>
-                            <td><a href="#"><?php echo $nft['catName'] ?></a></td>
-                            <td><a href="#"><?php echo $nft['createdAt']; ?></a></td>
-                            <td>
-                                <div class="flex center">
-                                    <form action="crud_DB.php" method="POST">
-                                        <input type="text" name="id_product" hidden value="<?php echo $nft['id']; ?>">
-                                            <button class= "DELETE_BUTTON filter-red" name="delete" style="padding-top : 1rem; background : none; border : none" ><a href="#"><img src="public/assets/images/delete.svg"></a></button>
-                                            
-                                    </form>
-                                        <button class="UPDATE_BUTTON filter-green" name="update" style=" background : none; border : none" ><a href="#"><img src="public/assets/images/update.svg"></a></button>
-                                </div>
-                            </td>
-                        </tr>
-                    <!-- Send id of product to highlight the row if clicked -->
-                    <?php } ?>
-                        <!-- <tr>
-                            <td><input type="checkbox" id="" name="" value=""></td>
-                            <td><a href="#"><img src="https://lh3.googleusercontent.com/I76d2Kzg7DoKfGYvQHmEUNsdMp9dd-P8Vd3kErKMnbcUABl9goKO7H755maGbaaQVkUM_yxHcFYHEl7YqM-jRTLV3MTDYkh3TO2ekg=w600"></a></td>
-                            <td><a href="#">Monkey</a></td>
-                            <td><a href="#">0.0</a></td>
-                            <td><a href="#">Pixel</a></td>
-                            <td><a href="#">00/00/2022</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="" name="" value=""></td>
-                            <td><a href="#"><img src="https://lh3.googleusercontent.com/WdxT9-tpMXozgLirIjhT-j2x4lUaLjYq7pBbzGW22cbxK9ie3W3WBzyNHSqNvPIDnBVSXjNfhQlvHxdwoI1ugX0p35M6ezsJqXgL6g=w600"></a></td>
-                            <td><a href="#">Monkey</a></td>
-                            <td><a href="#">0.0</a></td>
-                            <td><a href="#">Pixel</a></td>
-                            <td><a href="#">00/00/2022</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="" name="" value=""></td>
-                            <td><a href="#"><img src="https://lh3.googleusercontent.com/9HoUFd3DKfRIYJqgCgDzBKBDBObEHyx2PeAysZ3MNdrie-JGM_YEXEniQJQDdlFezNhNKUfAXGvSgcKKLt1NMc7s5s8lEbtoVZTzJw=w361"></a></td>
-                            <td><a href="#">Monkey</a></td>
-                            <td><a href="#">0.0</a></td>
-                            <td><a href="#">Pixel</a></td>
-                            <td><a href="#">00/00/2022</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="" name="" value=""></td>
-                            <td><a href="#"><img src="https://lh3.googleusercontent.com/v56aGEvNC_fdtJDsul-ankP_4HF8xmQn_5PziELrGLxsPwOCyBMHzbmiyohB6l-etGUykiAoEW2RiX9z7ZbpMXKLHrDrqk66SYP5Gmk=w600"></a></td>
-                            <td><a href="#">Monkey</a></td>
-                            <td><a href="#">0.0</a></td>
-                            <td><a href="#">Pixel</a></td>
-                            <td><a href="#">00/00/2022</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" id="" name="" value=""></td>
-                            <td><a href="#"><img src="https://lh3.googleusercontent.com/LdcKUFaVIGZuCBjz1CXdWjBIDLM_71e-Z-6gyrPWVb-oglKR14Tg4GEyia3agwwMscCF3KNsYcYr8O9ETi8V0HUWpnuhJpwnbzsStw=w600"></a></td>
-                            <td><a href="#">Monkey</a></td>
-                            <td><a href="#">0.0</a></td>
-                            <td><a href="#">Pixel</a></td>
-                            <td><a href="#">00/00/2022</a></td>
-                        </tr> -->
-                  </table>
-            </div>
-
-            <!-- pagination -->
-            <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#">1</a>
-                <a class="active" href="#">2</a>
-                <a href="#">3</a>
-                <!-- <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a> -->
-                <a href="#">&raquo;</a>
-              </div>
-
-              <!-- ADD PRODUCT BLOCK -->
-            <div class="bg-blurr">    
-            </div>
-            <div class="ADD bg-color">
-                <i class="CLOSE fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
-                <form action="crud_DB.php" method="POST" class="flex flex-col">
-                        <ul class="flex flex-row" style="justify-content: space-evenly;">
-                            <li>
-                                <label for="NFT_Name">NFT Name:</label>
-                                <input type="text" class="space-between color center" id="NFT_Name" name="NFT" placeholder="NFT Name"> 
-                            </li>
-                            <li>
-                                <label for="price">Price:</label>
-                                <input class="space-between center color" type="number" name="price" id="price" placeholder="0.0">
-                            </li>
-                            <li>
-                                <label for="cat_add">Category:</label>
-                                <select class="space-between color center" id="cat_add" name="product_cat">
-                                    <option value="1">Pixel</option>
-                                    <option value="2">2D</option>
-                                    <option value="3">3D</option>
-                                </select>
-                            </li>
-                        
-                            <!-- <li>
-                                <label for="start">Date of creation:</label>
-                                <input class="space-between color center" type="date" id="start" name="creation-date" value="2022-01-03" min="2022-01-03">
-                            </li> -->
-                            
-                        </ul>
-                        <ul>
-                            <li>
-                                <label for="NFT_src">NFT IMG Link:</label>
-                                <input type="text" style="width : 40%;" class="space-between color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
-                            </li>
-                            <li>
-                                <button type="submit" name="add" class="color" style="background-color: white; margin-top:0.5rem">ADD</button>
-                            </li>
-                        </ul>
-
-                </form>
-            
-              </div>
-              
-              <div class="UPDATE bg-color">
-                <i class="CLOSE_UP fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
-                <form action="crud_DB.php" method="POST" class="flex flex-col">
-                        <ul class="flex flex-row" style="justify-content: space-evenly;">
-                            <li>
-                                <label for="NFT_Name">NFT Name:</label>
-                                <input type="text" class="space-between color center" id="NFT_Name" name="NFT" placeholder="NFT Name"> 
-                            </li>
-                            <li>
-                                <label for="price">Price:</label>
-                                <input class="space-between center color" type="number" name="price" id="price" placeholder="0.0">
-                            </li>
-                            <li>
-                                <label for="cat_add">Category:</label>
-                                <select class="space-between color center" id="cat_add" name="product_cat">
-                                    <option value="1">Pixel</option>
-                                    <option value="2">2D</option>
-                                    <option value="3">3D</option>
-                                </select>
-                            </li>
-                        
-                            <!-- <li>
-                                <label for="start">Date of creation:</label>
-                                <input class="space-between color center" type="date" id="start" name="creation-date" value="2022-01-03" min="2022-01-03">
-                            </li> -->   
-                        </ul>
-
-                        <ul>
-                            <li>
-                                <label for="NFT_src">NFT IMG Link:</label>
-                                <input type="text" style="width : 40%;" class="space-between color" id="NFT_src" name="NFT_img" placeholder="NFT link"> 
-                            </li>
-                            <li>
-                                <button type="submit" name="update" class="color" style="background-color: white; margin-top:0.5rem">UPDATE</button>
-                            </li>
-                        </ul>
                 </form>
             </div>
         </div>
+        <!-- filter By section -->
+        <div class="flex flex-row center" style="margin-top : 0.8rem; color:white;">
+            <form class="FILTER flex flex-row center">
+                <div class="flex flex-row center">
+                    <h3>Price : MIN</h3>
+                    <input style="" class="space-between color center" type="number" id="min-price" placeholder="0.0">
 
-    
-</body>>
+                    <h3>MAX</h3>
+                    <input class="space-between color center" type="number" id="max-price" placeholder="0.0">
+                </div>
+                <div class="flex flex-row center">
+                    <h3>From </h3>
+                    <!-- <form for="start-date"> -->
+                    <input class="space-between color center" type="date" id="start-date" placeholder="dd/jj/yyyy">
+                    <!-- </form> -->
+                    <h3>To</h3>
+                    <!-- <form for="end-date"> -->
+                    <input class="space-between color center" type="date" id="end-date" placeholder="">
+                    <!-- </form> -->
+                </div>
+                <div>
+                    <button class="bg-color" style="background-color:violet; color:white;" onclick="sendData()" type="submit">FILTER</button>
+                </div>
+            </form>
 
-<script>
-    var add = document.querySelector(".ADD_BUTTON");
-    add.addEventListener("click", dis_add);
+        </div>
 
-    var update = document.querySelector('.UPDATE_BUTTON');
+        <!-- ADD PRODUCT -->
+        <div class="ADD_BUTTON" style="width:95%; padding:1rem; display:flex; justify-content:flex-end;">
+            <button style="background : none; border : none"><a href="#"><img src="public/assets/images/add.svg"></a></button>
+        </div>
+
+        <!-- Products tables/pages -->
+        <div class="">
+            <table style="table-layout: fixed; width : 100%; color:white;">
+                <tr>
+                    <th><input style="color:white;" type="checkbox" id="" name="" value=""></th>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Add Date</th>
+                    <th>Actions</th>
+                </tr>
+                <?php foreach ($row as $nft) { ?>
+                    <tr id="<?php echo $nft['id']; ?>" onclick="ActivateRow('<?php echo $nft['id']; ?>')">
+                        <td><input type="checkbox" id="" name="" value=""></td>
+                        <td><a  href="#"><img src="<?php echo $nft['imgSrc'] ?>"></a></td>
+                        <td><a href="#"><?php echo $nft['productName'] ?></a></td>
+                        <td><a href="#"><?php echo $nft['price'] ?></a></td>
+                        <td><a href="#"><?php echo $nft['catName'] ?></a></td>
+                        <td><a href="#"><?php echo $nft['createdAt']; ?></a></td>
+                        <td>
+                            <div class="flex center">
+                                <form action="crud_DB.php" method="POST">
+                                    <input type="text" name="id_product" hidden value="<?php echo $nft['id']; ?>">
+                                    <button class="DELETE_BUTTON filter-red" name="delete" style="padding-top : 1rem; background : none; border : none"><a href="#"><img src="public/assets/images/delete.svg"></a></button>
+                                </form>
+                                <button class="UPDATE_BUTTON filter-green" name="update" style=" background : none; border : none"><a href="#"><img src="public/assets/images/update.svg"></a></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Send id of product to highlight the row if clicked -->
+                <?php } ?>
+            </table>
+        </div>
+
+        <!-- pagination -->
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a class="active" href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">&raquo;</a>
+        </div>
+
+        <!-- ADD PRODUCT BLOCK -->
+        <div class="bg-blurr">
+        </div>
+        <div class="ADD bg-color">
+            <i class="CLOSE fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
+            <form action="crud_DB.php" method="POST" class="flex flex-col">
+                <ul class="flex flex-row" style="justify-content: space-evenly;">
+                    <li>
+                        <label for="NFT_Name">NFT Name:</label>
+                        <input type="text" class="space-between color center" id="NFT_Name" name="NFT" placeholder="NFT Name">
+                    </li>
+                    <li>
+                        <label for="price">Price:</label>
+                        <input class="space-between center color" type="number" name="price" id="price" placeholder="0.0">
+                    </li>
+                    <li>
+                        <label for="cat_add">Category:</label>
+                        <select class="space-between color center" id="cat_add" name="product_cat">
+                            <option value="1">Pixel</option>
+                            <option value="2">2D</option>
+                            <option value="3">3D</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="NFT_src">NFT IMG Link:</label>
+                        <input type="text" style="width : 40%;" class="space-between color" id="NFT_src" name="NFT_img" placeholder="NFT link">
+                    </li>
+                    <li>
+                        <button type="submit" name="add" class="color" style="background-color: white; margin-top:0.5rem">ADD</button>
+                    </li>
+                </ul>
+
+            </form>
+
+        </div>
+
+        <div class="UPDATE bg-color">
+            <i class="CLOSE_UP fas fa-window-close" style="font-size: 3em; float:right; margin:1.5rem"></i>
+            <form action="crud_DB.php" method="POST" class="flex flex-col">
+                <ul class="flex flex-row" style="justify-content: space-evenly;">
+                    <li>
+                        <label for="NFT_Name">NFT Name:</label>
+                        <input type="text" class="space-between color center" id="NFT_Name" name="NFT" placeholder="NFT Name">
+                    </li>
+                    <li>
+                        <label for="price">Price:</label>
+                        <input class="space-between center color" type="number" name="price" id="price" placeholder="0.0">
+                    </li>
+                    <li>
+                        <label for="cat_add">Category:</label>
+                        <select class="space-between color center" id="cat_add" name="product_cat">
+                            <option value="1">Pixel</option>
+                            <option value="2">2D</option>
+                            <option value="3">3D</option>
+                        </select>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <label for="NFT_src">NFT IMG Link:</label>
+                        <input type="text" style="width : 40%;" class="space-between color" id="NFT_src" name="NFT_img" placeholder="NFT link">
+                    </li>
+                    <li>
+                        <button type="submit" name="update" class="color" style="background-color: white; margin-top:0.5rem">UPDATE</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <script src="./public/js/helpers/helpers.js"></script>
+    <script src="./public/js/sidebar.js"></script>
+    <script>
+        var add = document.querySelector(".ADD_BUTTON");
+        add.addEventListener("click", dis_add);
+
+        var update = document.querySelector('.UPDATE_BUTTON');
         update.addEventListener('click', dis_update);
 
-    // var delete_event = document.querySelector('.DELETE_BUTTON');
-    //     delete_event.addEventListener('click', dis_delete_confir);
-
-    var closeX = document.querySelector('.CLOSE');
+        var closeX = document.querySelector('.CLOSE');
         closeX.addEventListener('click', close);
-    var closeX_2 = document.querySelector('.CLOSE_UP');
+        var closeX_2 = document.querySelector('.CLOSE_UP');
         closeX_2.addEventListener('click', close);
 
-    function close() {
+        function close() {
             document.querySelector(".ADD").style.display = "none";
             document.querySelector(".UPDATE").style.display = "none";
             document.querySelector(".bg-blurr").style.display = "none";
-    }
-    
-    function dis_add(){
-        // alert(1);
-        document.querySelector(".ADD").style.display = "block";
-        document.querySelector(".bg-blurr").style.display = "block";
-    }
-    function dis_update(){
-        // alert(1);
-        document.querySelector(".UPDATE").style.display = "block";
-        document.querySelector(".bg-blurr").style.display = "block";
-    }
-    // function dis_delete_confir(){
-    //     document.querySelector(".DELETE_CONFIRM").style.display = "block";
-    //     document.querySelector(".bg-blurr").style.display = "block";
-    // }
+        }
 
-    function ActivateRow(id){
-        let row = document.getElementById(id);
-        row.classList.add("active");
-    }
+        function dis_add() {
+            // alert(1);
+            document.querySelector(".ADD").style.display = "block";
+            document.querySelector(".bg-blurr").style.display = "block";
+        }
 
-</script>
+        function dis_update() {
+            // alert(1);
+            document.querySelector(".UPDATE").style.display = "block";
+            document.querySelector(".bg-blurr").style.display = "block";
+        }
+        // function dis_delete_confir(){
+        //     document.querySelector(".DELETE_CONFIRM").style.display = "block";
+        //     document.querySelector(".bg-blurr").style.display = "block";
+        // }
+
+        function ActivateRow(id) {
+            let row = document.getElementById(id);
+            row.classList.add("active");
+        }
+    </script>
+</body>
+
 </html>

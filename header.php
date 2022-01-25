@@ -28,7 +28,7 @@
     }, 2000);
 </script>
 <script>
-    (location.pathname.toLowerCase().includes('statistic')) ? document.querySelector('#title-header').innerHTML='Statistics' : null
+    (location.pathname.toLowerCase().includes('statistic')) ? document.querySelector('#title-header').innerHTML='Statistics' : (location.pathname.toLowerCase().includes('inventory')) ? document.querySelector('#title-header').innerHTML='Inventory' :  null
 </script>
 
 

@@ -1,8 +1,10 @@
 <?php
 
 session_start();
+
+
 if (!isset($_SESSION['user'])) {
-    header("location: /ShopNow/login.php");
+    header("location: /ShopNow2/login.php");
 }
 
 //connect to the db
@@ -37,27 +39,20 @@ $res = mysqli_query($conn, $sql_query);
 $cats =  mysqli_fetch_all($res, MYSQLI_ASSOC);
 
 
-
-
-
-
-
-
 $BAYC = 'BAYC';
 $Dod = 'Doodle';
 $WOW = 'World Of Women';
 ?>
 
 <html lang="en">
-<a href="/ShopNow2/Dashboard.php"></a>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
-    <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
-    <link rel="stylesheet" href="/ShopNow/public/css/header.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/dashboard.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/header.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
@@ -66,10 +61,11 @@ $WOW = 'World Of Women';
 
 <body class="flex">
     <!-- side bar -->
-    <div style="width: 136px; background-color: #1F2344;" class="sidebar">
+    <div style="overflow: hidden; position:fixed; left:0; right:0; width: 5%; height:100%; background-color: #1F2344; " class="sidebar">
     </div>
     <!-- end side bar -->
     <!-- body content -->
+    <!-- add NFT button -->
     <div style=" display:none; width: 100vw; height:100vh; background-color: #000000d4; z-index:999; position:absolute; top:0;left:0;" class="flex justify-center items-center popup">
         <form method="POST" style=" background-color: #1F2344;" class=" w-l-wrapper p-3 gap-3 flex rounded flex-col bg-wrapper shadow-wrapper">
             <div style="justify-content: flex-end;" class="w-full flex">
@@ -101,7 +97,7 @@ $WOW = 'World Of Women';
 
     <div class="body w-full overflow-y-scroll">
         <div class="header w-full">
-            <?php include('header.php') ?>
+            <?php require_once('header.php') ?>
         </div>
         <div style="justify-content: flex-end; margin-top:5rem; " class="flex w-full p-3">
             <button onclick="showPopup()" style="background-color: deeppink;" class="p-1 cursor-pointer text-white rounded-sm">Add new NFT</button>
@@ -158,13 +154,14 @@ $WOW = 'World Of Women';
                 data: {
                     labels: [
                         <?php
-                                foreach ($rows as $r) {
-                                    echo '"';
-                                    echo  $r['productName'];
-                                    echo '"';
-                                    echo ",";
-                                }
-                                ?>
+                        // [qsdqsqsdjhqsd] => ["qsd" , "dqs"] 
+                        foreach ($rows as $r) {
+                            echo '"';
+                            echo  $r['productName'];
+                            echo '"';
+                            echo ",";
+                        }
+                        ?>
                     ],
                     datasets: [{
                         label: '# of Votes',
@@ -175,10 +172,32 @@ $WOW = 'World Of Women';
                                 }
                                 ?>],
                         backgroundColor: [
-                            'violet','blue','purple','grey','yellow','blue','black'
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(64, 240, 131, 0.2)',
+                            'rgba(255, 37, 55, 0.2)',
+                            'rgba(28, 248, 200, 0.2)',
+                            'rgba(53, 31, 252, 0.2)',
+                            'rgba(247, 7, 255, 0.2)',
+                            'rgba(223, 113, 10, 0.2)'
                         ],
                         borderColor: [
-                            'violet','blue','purple','grey','yellow','blue','black'
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(64, 240, 131, 1)',
+                            'rgba(255, 37, 55, 1)',
+                            'rgba(28, 248, 200, 1)',
+                            'rgba(53, 31, 252, 1)',
+                            'rgba(247, 7, 255, 1)',
+                            'rgba(223, 113, 10, 1)'
                         ],
                         borderWidth: 3
                     }]

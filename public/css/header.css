@@ -4,8 +4,8 @@
     background-color: #1F2344;
     position: fixed;
     top: 0;
-    left: 120px;
-    width: calc(100vw - 120px);
+    left: 166px;
+    width: calc(100vw - 180px);
 }
 
 .bg-search{
