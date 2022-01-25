@@ -11,6 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/ShopNow2/public/css/index.css">
     <link rel="stylesheet" href="/ShopNow2/public/css/statistic.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/sidebar.css">
     <link rel="stylesheet" href="/ShopNow2/public/css/header.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
@@ -50,11 +51,11 @@ session_start();
                 </div>
                 <!-- end left side of body content -->
                 <!-- right side of body content -->
-                <div style="margin-left: 10rem; margin-bottom: 5rem;" class="right-side-sta">
-                    <div class="flex justify-center" style="width:100%; height:100%;">
-                        <div style="width:50%; height:45%; background-color:#12173D; margin-top:3rem; " class="pie2 rounded">
-                            <div style="width: 300px; height:400px;">
-                                <canvas id="myChart2" style="width:200px; height:200px;"></canvas>
+                <div style="" class="right-side-sta">
+                    <div class="flex justify-center">
+                        <div style=" background-color:#12173D; " class="pie2 rounded">
+                            <div style="width: 100%; height:100%;">
+                                <canvas id="myChart2" style="width:600px; height:600px;"></canvas>
                             </div>
                         </div>
                     </div>

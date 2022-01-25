@@ -58,6 +58,7 @@ $WOW = 'World Of Women';
     <link rel="stylesheet" href="/ShopNow/public/css/index.css">
     <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
     <link rel="stylesheet" href="/ShopNow/public/css/header.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/sidebar.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">

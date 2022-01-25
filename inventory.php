@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) > 0) {
     <link rel="stylesheet" href="/ShopNow/public/css/header.css">
     <link rel="stylesheet" href="/ShopNow/public/css/index.css">
     <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
-
+    <link rel="stylesheet" href="/ShopNow/public/css/sidebar.css">
     <link rel="stylesheet" href="public/css/inventory.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
 

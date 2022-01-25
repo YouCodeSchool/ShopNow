@@ -46,9 +46,6 @@ body{
         width: 100%;
         height: fit-content;
     }
-    .sidebar{
-        display:none;
-    }
     .cards-wrapper{
         display: block;
     }
