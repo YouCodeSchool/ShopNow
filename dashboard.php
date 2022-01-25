@@ -66,7 +66,7 @@ $WOW = 'World Of Women';
 
 <body class="flex">
     <!-- side bar -->
-    <div style="width: 136px; background-color: #1F2344;" class="sidebar">
+    <div style="overflow: hidden; position:fixed; left:0; right:0; width: 6.5%; height:100%; background-color: #1F2344; " class="sidebar">
     </div>
     <!-- end side bar -->
     <!-- body content -->

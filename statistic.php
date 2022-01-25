@@ -28,8 +28,8 @@ session_start();
             <?php include('header.php') ?>
         </div>
         <div style="padding:1rem; flex-direction:column;" class="statistic-wrapper rounded-sm w-full flex bg-violet ">
-            <div class="top flex justify-center">
-                <div style="width:100%; height:100%; background-color:#12173D; display:flex; justify-content:center; margin-top:5rem; margin-left:10rem;" class="pie1 rounded">
+            <div style="margin-top:5rem; margin-left: 8rem;" class="top flex justify-center">
+                <div style="width:100%; height:100%; background-color:#12173D; display:flex; justify-content:center;" class="pie1 rounded">
                     <div style="width: 300px; height:400px;">
                         <canvas id="lineChart" style="width:400px; height:400px;"></canvas>
                     </div>
@@ -37,7 +37,7 @@ session_start();
             </div>
             <div style=" width:50%;">
                 <!-- left side of body content -->
-                <div class="left-side-sta">
+                <div style="margin-left: 4rem;" class="left-side-sta">
                     <div class="flex justify-center" style="width:100%; height:100%;">
                         <div style="width:100%; height:80%; background-color:#12173D; margin-top:3rem; margin-left:7.5rem;" class="pie2 rounded">
                             <div style="width: 399px; height:400px;">
@@ -50,7 +50,7 @@ session_start();
                 </div>
                 <!-- end left side of body content -->
                 <!-- right side of body content -->
-                <div class="right-side-sta">
+                <div style="margin-left: 10rem; margin-bottom: 5rem;" class="right-side-sta">
                     <div class="flex justify-center" style="width:100%; height:100%;">
                         <div style="width:50%; height:45%; background-color:#12173D; margin-top:3rem; " class="pie2 rounded">
                             <div style="width: 300px; height:400px;">
