@@ -44,7 +44,7 @@ if (mysqli_num_rows($result) > 0) {
 
 <body class="flex flex-row">
     <!-- side bar -->
-    <div style="overflow: hidden; position:fixed; left: 0; width: calc(16vw - 147px); height:100%; background-color: #1F2344; " class="sidebar">
+    <div style="overflow: hidden; position:fixed; left: 0; width: calc(16vw - 180px); height:100%; background-color: #1F2344; " class="sidebar">
     </div>
     <!-- end side bar -->
     <div class="main-page">
