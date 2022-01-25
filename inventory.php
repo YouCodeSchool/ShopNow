@@ -33,10 +33,10 @@ if (mysqli_num_rows($result) > 0) {
     <meta name="description" content="NFT selling platform">
     <meta name="application-name" content="ShopNow : Our NFT Selling Platform">
     <title>Inventory</title>
-    <link rel="stylesheet" href="/ShopNow2/public/css/header.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/index.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/dashboard.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/sidebar.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/header.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/sidebar.css">
     <link rel="stylesheet" href="public/css/inventory.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
 
