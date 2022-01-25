@@ -53,7 +53,7 @@ if (isset($_POST['email'])){
             <input id="email" name="email" class="p-3 text-white rounded-sm form-email outline-none" type="email" placeholder="login@gmail.com" required>
             <label for="password" class="text-white pl-3">Password</label>
             <input id="password" name="password" class="p-3 text-white rounded-sm form-email outline-none" type="password" placeholder="****************" required>
-            <span class="text-white" ><?php var_dump($error) ?></span>
+            <span class="text-white" ><?php echo $error ?></span>
             <div class="flex justify-center w-full">
                 <button style="min-width:300px;" class="p-3 w-btn font-xl cursor-pointer outline-none rounded flex justify-center items-center bg-primary"><span>Login</span></button>
             </div>

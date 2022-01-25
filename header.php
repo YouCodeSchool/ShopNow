@@ -6,7 +6,7 @@
         <img class="logo" style="width: 100%; height:100%; object-fit: cover;" src="./public/assets/images/NFTlogo.png" alt="NFT logo">
     </div>
     <div class="flex gap-3">
-        <span id="hello"  class="text-white">Hello  <?php  echo explode('@' ,$_SESSION['user'])[0]; ?></span>
+        <span id="hello"  class="text-white">Hello <?php echo explode('@' ,$_SESSION['user'])[0]; ?></span>
         
         <form class="search-wrapper flex gap-3 bg-dark-blue rounded-sm ">
             <input id="search" name="search" class="bg-dark-blue p-1 outline-none rounded-sm text-white font-sm" type="text" placeholder="  Search..">
@@ -14,11 +14,14 @@
                     <i class="fas fa-search text-white"></i>
                 </button>
         </form>
-        <form method="POST" action="/ShopNow/logout.php" id="checkLogout" class="user bg-violet p-1 cursor-pointer rounded-full">
+        <form method="POST" action="/ShopNow2/logout.php" id="checkLogout" class="user bg-violet p-1 cursor-pointer rounded-full">
             <button style="background: #00000000;" class="outline-none border-none" type="submit"  >
                 <i class="fas fa-user text-white  cursor-pointer"></i>
             </button>
         </form>
+    </div>
+    <div class="header-responsive">
+    <i id="times_menu" class="fas fa-times"></i>
     </div>
 </div>
 

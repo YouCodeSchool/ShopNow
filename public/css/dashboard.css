@@ -17,12 +17,15 @@ body{
 }
 .left-side{
     width: 60% !important;
+    margin-top: 2rem;
 }
 .right-side{
     width: 38% !important;
 }
+
 .dashboard-wrapper{
     gap: 30px;
+    padding-left: 7rem;
 }
 
 .cards-wrapper{
@@ -30,9 +33,16 @@ body{
     padding: 1rem;
 }
 
+.pie{
+    margin-top:2rem;
+}
+
 @media only screen and (max-width: 1200px) {
     .dashboard-wrapper{
         display: block;
+        padding-left: 0rem;
+        width: 90%;
+        margin-left: 1rem;
     }
     .left-side{
         width: 100% !important;

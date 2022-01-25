@@ -36,31 +36,21 @@ session_start();
                     </div>
                 </div>
             </div>
-            <div style=" width:50%;">
-                <!-- left side of body content -->
-                <div style="margin-left: 4rem;" class="left-side-sta">
-                    <div class="flex justify-center" style="width:100%; height:100%;">
-                        <div style="width:100%; height:80%; background-color:#12173D; margin-top:3rem; margin-left:7.5rem;" class="pie2 rounded">
-                            <div style="width: 399px; height:400px;">
+            <!-- 2ndpart-of-statistic -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <div style=" width:50%;" class="2ndpart-of-statistic flex justify-between">
+                    <div style="width:100%; height:80%; background-color:#12173D;">
+                            <div style="width: 399px; height:400px;"class="flex justify-center ">
                                 <canvas id="myChart" style="width:200px; height:200px;"></canvas>
                             </div>
-
-                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                        </div>
                     </div>
-                </div>
-                <!-- end left side of body content -->
-                <!-- right side of body content -->
-                <div style="" class="right-side-sta">
-                    <div class="flex justify-center">
-                        <div style=" background-color:#12173D; " class="pie2 rounded">
+                    <div class="flex justify-between">
                             <div style="width: 100%; height:100%;">
                                 <canvas id="myChart2" style="width:600px; height:600px;"></canvas>
                             </div>
-                        </div>
                     </div>
-                </div>
             </div>
+            <!-- end 2ndpart-of-statistic -->
         </div>
         <script>
             const ctx1 = document.getElementById('lineChart');
@@ -98,7 +88,6 @@ session_start();
                             'rgba(53, 31, 252, 1)',
                             'rgba(247, 7, 255, 1)',
                             'rgba(223, 113, 10, 1)'
-
                         ],
                         borderWidth: 1,
                     }]
@@ -148,7 +137,6 @@ session_start();
                             'rgba(53, 31, 252, 1)',
                             'rgba(247, 7, 255, 1)',
                             'rgba(223, 113, 10, 1)'
-
                         ],
                         borderWidth: 1,
                     }]
@@ -198,7 +186,6 @@ session_start();
                             'rgba(53, 31, 252, 1)',
                             'rgba(247, 7, 255, 1)',
                             'rgba(223, 113, 10, 1)'
-
                         ],
                         borderWidth: 1,
                     }]

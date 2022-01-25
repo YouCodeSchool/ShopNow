@@ -15,6 +15,9 @@
     background-color: #1F2344;
 }
 
+.header-responsive{
+    display: none;
+}
 
 .bg-violet{
     background-color: linear-gradient(rgba(118, 106, 178, 0.89) 0%, #342382 100%);
@@ -22,12 +25,12 @@
 .logo{
     display: none;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 800px) {
     .header-wrapper{
         position: fixed;
         top: 0;
         left: 0;
-        width: calc(131vw - 120px);
+        width: calc(200vw - 150px);
     }
     .logo{
         display: block;
@@ -35,5 +38,13 @@
     .dashboard-text{
         display: none;
     }
-
+    .search-wrapper{
+        display: none;
+    }
+    .user{
+        display: none;
+    }
+    .header-responsive{
+        display: block;
+    }
 }
