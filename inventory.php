@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-    header("location: /ShopNow2/login.php");
+    header("location: /ShopNow/login.php");
 }
 $bit = 'Bitcoin';
 ?>
@@ -33,25 +33,25 @@ if (mysqli_num_rows($result) > 0) {
     <meta name="description" content="NFT selling platform">
     <meta name="application-name" content="ShopNow : Our NFT Selling Platform">
     <title>Inventory</title>
-    <link rel="stylesheet" href="/ShopNow2/public/css/header.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/index.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/dashboard.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/sidebar.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/header-inventory.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/sidebar.css">
     <link rel="stylesheet" href="public/css/inventory.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
 
 </head>
 
-<body class="flex flex-row">
+<body class="flex flex-row center">
     <!-- side bar -->
-    <div style="background-color: #1F2344;" class="sidebar">
+    <div style="overflow: hidden; position:fixed; left:0; width : 6.5%; height:100%; background-color: #1F2344; " class="sidebar">
     </div>
     <!-- end side bar -->
-    <div class="main-page">
-        <div class=" header w-full">
+    <div class="main-page flex flex-col center">
+        <div style="width : 100%">
             <?php include('header.php'); ?>
         </div>
-        <div class="SEARCH_MOBILE ">
+        <div class="SEARCH_MOBILE SEARCH flex center ">
             <div class="search-container space-between">
                 <form action="" for="search">
                     <div class="input-icons">
@@ -103,13 +103,13 @@ if (mysqli_num_rows($result) > 0) {
         </div>
 
         <!-- ADD PRODUCT -->
-        <div class="ADD_BUTTON" style="width:95%; padding:1rem; display:flex; justify-content:flex-end;">
-            <button style="background : none; border : none"><a href="#"><img src="public/assets/images/add.svg"></a></button>
+        <div style="width:95%; padding:1rem; display:flex; justify-content:flex-end;">
+            <button class="ADD_BUTTON" style="background : none; border : none"><a href="#"><img src="public/assets/images/add.svg"></a></button>
         </div>
 
         <!-- Products tables/pages -->
         <div class="">
-            <table style="table-layout: fixed; width : 100%; color:white;">
+            <table class = "center" style="table-layout: fixed; width : 100%; color:white;">
                 <tr>
                     <th><input style="color:white;" type="checkbox" id="" name="" value=""></th>
                     <th>#</th>
@@ -122,18 +122,18 @@ if (mysqli_num_rows($result) > 0) {
                 <?php foreach ($row as $nft) { ?>
                     <tr id="<?php echo $nft['id']; ?>" onclick="ActivateRow('<?php echo $nft['id']; ?>')">
                         <td><input type="checkbox" id="" name="" value=""></td>
-                        <td><a  href="#"><img src="<?php echo $nft['imgSrc'] ?>"></a></td>
+                        <td class="NFT-img"><a  href="#"><img src="<?php echo $nft['imgSrc'] ?>"></a></td>
                         <td><a href="#"><?php echo $nft['productName'] ?></a></td>
                         <td><a href="#"><?php echo $nft['price'] ?></a></td>
                         <td><a href="#"><?php echo $nft['catName'] ?></a></td>
                         <td><a href="#"><?php echo $nft['createdAt']; ?></a></td>
                         <td>
-                            <div class="flex center">
-                                <form action="crud_DB.php" method="POST">
+                            <div class="actions flex center">
+                                <form class="form_delete_button" action="crud_DB.php" method="POST">
                                     <input type="text" name="id_product" hidden value="<?php echo $nft['id']; ?>">
-                                    <button class="DELETE_BUTTON filter-red" name="delete" style="padding-top : 1rem; background : none; border : none"><a href="#"><img src="public/assets/images/delete.svg"></a></button>
+                                    <button class="DELETE_BUTTON filter-red" name="delete" style="background : none; border : none"><a href="#"><img  src="public/assets/images/delete.svg"></a></button>
                                 </form>
-                                <button class="UPDATE_BUTTON filter-green" name="update" style=" background : none; border : none"><a href="#"><img src="public/assets/images/update.svg"></a></button>
+                                <button class="UPDATE_BUTTON filter-green" name="update" style=" background : none; border : none"><a href="#"><img  src="public/assets/images/update.svg"></a></button>
                             </div>
                         </td>
                     </tr>
@@ -230,8 +230,8 @@ if (mysqli_num_rows($result) > 0) {
         var add = document.querySelector(".ADD_BUTTON");
         add.addEventListener("click", dis_add);
 
-        var update = document.querySelector('.UPDATE_BUTTON');
-        update.addEventListener('click', dis_update);
+        var update = document.querySelectorAll('.UPDATE_BUTTON').forEach(btn =>{
+        btn.addEventListener('click', dis_update); });
 
         var closeX = document.querySelector('.CLOSE');
         closeX.addEventListener('click', close);

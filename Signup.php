@@ -12,7 +12,7 @@ if (isset($_POST['create'])) {
     session_destroy();
     session_start();
     $_SESSION['user'] = $email;
-    header("location: /ShopNow2/dashboard.php");
+    header("location: /ShopNow/dashboard.php");
 }
 ?>
 <html lang="en">
@@ -22,9 +22,9 @@ if (isset($_POST['create'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fontawesome.com/">
-    <link rel="stylesheet" href="/ShopNow2/public/css/index.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/login.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/signup.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/login.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/signup.css">
     <script src="./public/js/helpers/helpers.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
     <title>Sign Up</title>
@@ -46,7 +46,7 @@ if (isset($_POST['create'])) {
                 <button name="create" style="min-width:300px;" class="p-3 w-btn font-xl cursor-pointer outline-none rounded flex justify-center items-center bg-primary"><span>Signup</span></button>
             </div>
             <div class="flex justify-center w-full">
-                <span class="text-white">Already have an account? <a class="text-primary" href="/ShopNow2/login.php">Sign In</a></span>
+                <span class="text-white">Already have an account? <a class="text-primary" href="/ShopNow/login.php">Sign In</a></span>
             </div>
         </form>
     </div>
