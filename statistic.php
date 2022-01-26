@@ -9,10 +9,10 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
-    <link rel="stylesheet" href="/ShopNow/public/css/statistic.css">
-    <link rel="stylesheet" href="/ShopNow/public/css/sidebar.css">
-    <link rel="stylesheet" href="/ShopNow/public/css/header.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/statistic.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/sidebar.css">
+    <link rel="stylesheet" href="/ShopNow2/public/css/header.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
     <title>Statistic</title>
