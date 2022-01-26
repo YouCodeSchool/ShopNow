@@ -20,9 +20,7 @@
             </button>
         </form>
     </div>
-    <div class="header-responsive">
-    <i id="times_menu" class="fas fa-times"></i>
-    </div>
+    
 </div>
 
 <script>

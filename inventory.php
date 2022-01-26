@@ -34,9 +34,9 @@ if (mysqli_num_rows($result) > 0) {
     <meta name="application-name" content="ShopNow : Our NFT Selling Platform">
     <title>Inventory</title>
     <link rel="stylesheet" href="/ShopNow/public/css/header-inventory.css">
-    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/index-inventory.css">
     <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
-    <link rel="stylesheet" href="/ShopNow/public/css/sidebar.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/sidebar-inventory.css">
     <link rel="stylesheet" href="public/css/inventory.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
 
@@ -49,7 +49,7 @@ if (mysqli_num_rows($result) > 0) {
     <!-- end side bar -->
     <div class="main-page flex flex-col center">
         <div style="width : 100%">
-            <?php include('header.php'); ?>
+            <?php include('header-inventory.php'); ?>
         </div>
         <div class="SEARCH_MOBILE SEARCH flex center ">
             <div class="search-container space-between">
@@ -113,20 +113,20 @@ if (mysqli_num_rows($result) > 0) {
                 <tr>
                     <th><input style="color:white;" type="checkbox" id="" name="" value=""></th>
                     <th>#</th>
-                    <th>Name</th>
+                    <th class="Hide_Name">Name</th>
                     <th>Price</th>
-                    <th>Category</th>
-                    <th>Add Date</th>
+                    <th class="Hide_Cat">Category</th>
+                    <th class="Hide_Date">Add Date</th>
                     <th>Actions</th>
                 </tr>
                 <?php foreach ($row as $nft) { ?>
                     <tr id="<?php echo $nft['id']; ?>" onclick="ActivateRow('<?php echo $nft['id']; ?>')">
                         <td><input type="checkbox" id="" name="" value=""></td>
                         <td class="NFT-img"><a  href="#"><img src="<?php echo $nft['imgSrc'] ?>"></a></td>
-                        <td><a href="#"><?php echo $nft['productName'] ?></a></td>
+                        <td class="Hide_Name"><a href="#"><?php echo $nft['productName'] ?></a></td>
                         <td><a href="#"><?php echo $nft['price'] ?></a></td>
-                        <td><a href="#"><?php echo $nft['catName'] ?></a></td>
-                        <td><a href="#"><?php echo $nft['createdAt']; ?></a></td>
+                        <td class="Hide_Cat"><a href="#"><?php echo $nft['catName'] ?></a></td>
+                        <td class="Hide_Date"><a href="#"><?php echo $nft['createdAt']; ?></a></td>
                         <td>
                             <div class="actions flex center">
                                 <form class="form_delete_button" action="crud_DB.php" method="POST">
@@ -225,7 +225,7 @@ if (mysqli_num_rows($result) > 0) {
     </div>
 
     <script src="./public/js/helpers/helpers.js"></script>
-    <script src="./public/js/sidebar.js"></script>
+    <script src="./public/js/sidebar-inventory.js"></script>
     <script>
         var add = document.querySelector(".ADD_BUTTON");
         add.addEventListener("click", dis_add);
@@ -262,7 +262,8 @@ if (mysqli_num_rows($result) > 0) {
 
         function ActivateRow(id) {
             let row = document.getElementById(id);
-            row.classList.add("active");
+            // row.classList.add("active");
+            row.classList.toggle("active");
         }
     </script>
 </body>
