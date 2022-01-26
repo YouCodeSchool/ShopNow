@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap');
+
+.header-wrapper{
+    background-color: #1F2344;
+    position: fixed;
+    top: 0;
+    /* left: 125px; */
+    /* width: calc(102vw - 180px); */
+    right : 0;
+    width : 93%;
+}
+
+.bg-search{
+    background-color: #1F2344;
+}
+
+.bg-violet{
+    background-color: linear-gradient(rgba(118, 106, 178, 0.89) 0%, #342382 100%);
+}
+.logo{
+    display: none;
+}
+@media only screen and (max-width: 1200px) {
+    .header-wrapper{
+        position: fixed;
+        top: 0;
+        /* left: 0; */
+        /* width: calc(131vw - 120px); */
+        width : 100%;
+    }
+    .logo{
+        display: block;
+        margin-left : 1rem;
+    }
+    .dashboard-text{
+        display: none;
+    }
+
+}
+@media only screen and (max-width: 450px) {
+    
+
+}
