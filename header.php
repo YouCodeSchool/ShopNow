@@ -2,7 +2,7 @@
 ?>
 <div class="header-wrapper flex p-1 justify-between items-center">
     <h1 id="title-header" class="dashboard-text text-white cursor-pointer ">Dashboard</h1>
-    <div style="width:40px; height:40px;" >
+    <div style="width:50px; height:50px;" >
         <img class="logo" style="width: 100%; height:100%; object-fit: cover;" src="./public/assets/images/NFTlogo.png" alt="NFT logo">
     </div>
     <div class="flex gap-3">
