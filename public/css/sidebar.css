@@ -5,17 +5,29 @@
  }
 
 .sidebar{
-    overflow: hidden; 
+    /* overflow: hidden; 
     position:fixed; 
     left: 0;
-    width: 6.5%;
+    width: 6.5%; */
     /* width: calc(16vw - 180px); */
-    height:100%;
+    /* height:100%;
     background-color: #1F2344;
+     */
+    width : 6.5%;
+}
+
+.logo{
+    cursor: pointer;
 }
 
  @media only screen and (max-width: 1200px) {
     .sidebar{
         display: none;
+    }
+ }
+
+ @media only screen and (max-width: 1000px) {
+    .sidebar{
+        width : 20px;
     }
  }

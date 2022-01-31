@@ -29,11 +29,11 @@ a {
     background-color: #12173D;
     /* padding-top: 2rem; */
     /* padding-left: 6rem; */
-    width: 93.5%;
+    /* width: 93.7%; */
     height: 100%;
-    right : 0;
+    /* right : 0; */
     /* overflow : auto; */
-    position : fixed;
+    /* position : fixed; */
 
 }
 /* .SEARCH{
@@ -147,12 +147,13 @@ a {
     display: none;
     position: absolute;
     background-color: #12173D;
+    /* color : white !important; */
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 999;
   }
 .dropdown-content a {
-    /* color: black; */
+    color : white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -163,7 +164,7 @@ a {
     
 .dropdown-content a:hover {
     color: black;
-    background-color: #f1f1f1;}
+    background-color: #ffffff;}
 
 .inline-block{
     /* position: relative; */
@@ -197,10 +198,18 @@ tr:hover {
 table .active {
     background-color: #6b6d80;
 }
+.scroll {
+    /* overflow:hidden; */
+    overflow-y: scroll;
+    height: 500px;
+}
 td a {
     display: flex;
     color: white;
     justify-content: center;
+}
+th{
+    position: sticky;
 }
 td, th {
     /* padding : 1.5rem; */
@@ -235,20 +244,19 @@ form {
       background-color: white;
       color : black;
 }
-/* .display {
-    display: block;
-} */
+
 .ADD, .UPDATE, .bg-blurr{
     display : none;
 }
 .ADD, .UPDATE{
     position: absolute;
-    bottom :2px ;
-    height:  280px;
+    /* bottom :2px ; */
+    height:  300px;
     width : 100%;
     z-index : 900;
     /* background-color: white; */
     border-top : 2px solid white;
+    color : white;
     /* border-bottom : 2px solid white; */
 
 }
@@ -264,26 +272,25 @@ form {
     background-color: rgba(255, 255, 255, 0.644);
     filter : blur(6rem)
 }
-.ADD form, .UPDATE form {
+/* .ADD form, .UPDATE form {
     top : 20%;
-    /* margin-top : 50%; */
-    
-}
+    margin-top : 50%;
+} */
 .ADD button, .UPDATE button {
     width : 10rem;
-    height : 3rem;
+    font-size : 25px;
 }
 .ADD input, .UPDATE input, select {
    border-radius: 0.5rem;
    width : 14rem;
    height : 2.5rem;
 }
-.DELETE_CONFIRM{
+/* .DELETE_CONFIRM{
     display : none;
-    /* border : 2px solid white; */
-    /* border-radius: 1rem; */
+    border : 2px solid white;
+    border-radius: 1rem;
 
-}
+} */
 .Proceed{
     /* display : block; */
     /* border : 2px solid white; */
@@ -303,6 +310,9 @@ form {
     border-radius: 1rem;
 }
 .CLOSE{
+    cursor: pointer;
+}
+.CLOSE_UP{
     cursor: pointer;
 }
 form ul li {
@@ -340,15 +350,18 @@ button{
     /* justify-content: space-between; */
 }
 
-.DELETE_BUTTON{
-    /* width: 100px; */
-    /* height: 100px; */
+/* .DELETE_BUTTON{
+    width: 100px;
+    height: 100px;
+} */
+.display{
+    display : block;
 }
-
 #cat_add option{
     color : black;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
+
 
 @media only screen and (max-width: 1200px) {
     .main-page{
@@ -366,6 +379,13 @@ button{
 @media only screen and (max-width: 1000px){
     body{
         flex-direction : column;
+    }
+    .ADD button, .UPDATE button {
+        padding : 1rem;
+    }
+    .actions img {
+        width : 40px;
+        height : 40px;
     }
 
     /* .left-bar-container{ */
@@ -390,27 +410,27 @@ button{
         /* width : 60%; */
         /* overflow :auto; */
     /* } */
-    .CRUD {
-        /* display : block; */
+    /* .CRUD {
+        display : block;
         position : absolute;
         top : 8rem;
         flex-direction: row;
-        /* margin-top : 1rem; */
+        margin-top : 1rem;
         margin-left : 1rem;
-        /* font-size: 5rem; */
+        font-size: 5rem;
         width : 100%;
-        /* bottom : 0; */
+        bottom : 0;
         z-index : 1000;
-    }
+    } */
     /* .CRUD img {
         width : 4rem;
         height : 4rem;
     } */
 
-    
+/*     
     .ADD_BUTTON h1, .DELETE_BUTTON h1, .UPDATE_BUTTON h1{
         display : none;
-    }
+    } */
 
     /* .FILTER {
         display : block; */
@@ -435,5 +455,87 @@ button{
         display : none;
       background-color: #292C49;
     }
-   
+}
+
+@media only screen and (max-width: 670px){
+    .Hide_Name {
+        display: none;
+    }
+    .actions img {
+        width : 40px;
+        height : 40px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .Hide_Cat {
+        display: none;
+    }
+    .actions img {
+        width : 30px;
+        height : 30px;
+    }
+}
+
+@media only screen and (max-width: 440px){
+    .Hide_Date {
+        display: none;
+    }
+
+    .actions img {
+        width : 30px;
+        height : 30px;
+    }
+}
+
+@media only screen and (max-width: 960px){
+    .Hide_Date {
+        display: none;
+    }
+
+    .actions img {
+        width : 30px;
+        height : 30px;
+    }
+}
+
+@media only screen and (max-width: 1096px){
+    #cat_id {
+        width : 40%;
+    }
+    /* .ADD ul li {
+        justify-content: center;
+    }
+    .ADD, .UPDATE{
+        height : 400px;
+    } */
+    .ADD, .UPDATE{
+        height : 400px;
+    }
+    .ADD ul, .UPDATE ul {
+        display: table;
+      }
+      
+    .ADD li, .UPDATE li {
+        display: table-row;
+      }
+      
+    .ADD label, .UPDATE label, .ADD input, .UPDATE label {
+        display: table-cell;
+      }
+    /* #NFT_src{
+        margin-left : 1rem;
+        width : 14rem;
+    } */
+    /* .add_product ul{
+        display: table-row;
+    }
+    .add_product li{
+        display: table-row;
+    } */
+
+    .actions img {
+        width : 30px;
+        height : 30px;
+    }
 }

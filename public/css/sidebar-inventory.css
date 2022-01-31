@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+ }
+
+.logo{
+    cursor: pointer;
+}
+
+.sidebar{
+    z-index : 1020;
+}
+.logo_sidebar{
+    cursor: pointer;
+}
+/* .responsive-sidebar{
+    flex-grow : 3;
+} */
+.display {
+    display : block;
+}
+
+.w-100{
+    width : 100%;
+}
+
+ @media only screen and (max-width: 1200px) {
+    .sidebar{
+        display: none;
+    }
+ }

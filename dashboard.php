@@ -49,16 +49,16 @@ $WOW = 'World Of Women';
 ?>
 
 <html lang="en">
-<a href="/ShopNow2/Dashboard.php"></a>
+<a href="/ShopNow/Dashboard.php"></a>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/ShopNow2/public/css/index.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/dashboard.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/header.css">
-    <link rel="stylesheet" href="/ShopNow2/public/css/sidebar.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/index.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/dashboard.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/header-inventory.css">
+    <link rel="stylesheet" href="/ShopNow/public/css/sidebar-inventory.css">
     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
@@ -67,11 +67,10 @@ $WOW = 'World Of Women';
 
 <body class="flex">
     <!-- side bar -->
-    <div style="overflow: hidden; position:fixed; left:0; right:0; width: 6.5%; height:100%; background-color: #1F2344; " class="sidebar">
+    <div style="overflow: hidden; left:0; height:100%; background-color: #1F2344; " class="sidebar">
     </div>
     <!-- end side bar -->
     <!-- body content -->
-    <!-- popup -->
     <div style=" display:none; width: 100vw; height:100vh; background-color: #000000d4; z-index:999; position:absolute; top:0;left:0;" class="flex justify-center items-center popup">
         <form method="POST" style=" background-color: #1F2344;" class=" w-l-wrapper p-3 gap-3 flex rounded flex-col bg-wrapper shadow-wrapper">
             <div style="justify-content: flex-end;" class="w-full flex">
@@ -100,23 +99,23 @@ $WOW = 'World Of Women';
             </div>
         </form>
     </div>
-<!-- end popup -->
+
     <div class="body w-full overflow-y-scroll">
-        <div class="header w-full">
-            <?php require_once('header.php') ?>
+        <div style="width : 100%">
+            <?php include('header-inventory.php'); ?>
         </div>
         <div style="justify-content: flex-end; margin-top:5rem; " class="flex w-full p-3">
             <button onclick="showPopup()" style="background-color: deeppink;" class="p-1 cursor-pointer text-white rounded-sm">Add new NFT</button>
         </div>
-        <div class="dashboard-wrapper rounded-sm w-full flex bg-violet ">
+        <div style="padding:1rem; " class="dashboard-wrapper rounded-sm w-full flex bg-violet ">
             <!-- left side of body content -->
             <div class="left-side">
                 <div class="flex justify-center">
                     <div style="width: 1025px; height: 323px; border-radius: 15px; background-image: url('./public/assets/images/Etherium.webp'); background-position: center; background-size: cover;" class="">
                     </div>
                 </div>
-                <div style="width:100%; height:75%; background-color:#12173D; margin-top:3rem; " class="rounded">
-                    <canvas id="myChart" class="pie" style="width:20%; height:20%;"></canvas>
+                <div style="width:100%; height:75%; background-color:#12173D; margin-top:3rem; " class="pie rounded">
+                    <canvas id="myChart" style="width:20%; height:20%;"></canvas>
                 </div>
             </div>
             <!-- end left side of body content -->
@@ -195,7 +194,40 @@ $WOW = 'World Of Women';
             }
         </script>
         <script src="./public/js/helpers/helpers.js"></script>
-        <script src="./public/js/sidebar.js"></script>
+        <script src="./public/js/sidebar-inventory.js"></script>
+
+        <script>
+            var logo = document.querySelector('.logo');
+            logo.addEventListener('click', show_sidebar);
+        var logo_sidebar = document.querySelector('.logo_sidebar');
+            logo_sidebar.addEventListener('click', hide_sidebar);
+
+        function show_sidebar(){
+            // var sidebar = document.querySelector('.sidebar');
+            // sidebar.classList.(".display");
+            let sidebar = document.querySelector(".sidebar");
+            // if(sidebar.style.display == "block"){
+            //     sidebar.style.display = "none";
+            // }
+            // else {sidebar.style.display = "block";}
+            sidebar.style.display = "block";
+            document.querySelector(".logo").style.display = "none";
+            // sidebar.classList.toggle(".display"); 
+            // sidebar.classList.toggle(".responsive-sidebar");            
+        }
+        function hide_sidebar(){
+            // var sidebar = document.querySelector('.sidebar');
+            // sidebar.classList.(".display");
+            let sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = "none";
+            document.querySelector(".logo").style.display = "block";
+            let main_page = document.querySelector(".main-page");
+            main_page.classList.add("w-100");
+            // sidebar.classList.toggle(".display"); 
+            // sidebar.classList.toggle(".responsive-sidebar");            
+        }
+
+        </script>
 </body>
 
 </html>

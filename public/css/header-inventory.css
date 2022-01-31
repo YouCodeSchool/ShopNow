@@ -4,10 +4,13 @@
     background-color: #1F2344;
     position: fixed;
     top: 0;
+    right : 0;
     /* left: 125px; */
     /* width: calc(102vw - 180px); */
-    right : 0;
-    width : 93%;
+    /* right : 0; */
+    /* width : 94%; */
+    width : 100%;
+    height: 70px;
 }
 
 .bg-search{
@@ -38,6 +41,20 @@
 
 }
 @media only screen and (max-width: 450px) {
-    
+    .search-wrapper{
+        max-width : 60px;
+        /* align-items: center; */
+        justify-content: center;
+        margin-right : 65px;
+    }
 
 }
+
+/* @media only screen and (max-width: 450px) {
+    #hello{
+        z-index : 1200;
+        
+    }
+    
+
+} */

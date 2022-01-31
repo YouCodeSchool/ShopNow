@@ -1,6 +1,6 @@
 let sidebar = `
 
-<div class="flex justify-center items-center">
+<div class="flex justify-center items-center responsive-sidebar">
 <img class="logo_sidebar" style="width:60px; height:60px; margin-top: 1rem; " src="./public/assets/images/NFTlogo.png" alt="NFT logo">
 </div>
 <div class="flex justify-center">
