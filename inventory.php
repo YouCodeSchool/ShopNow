@@ -271,6 +271,7 @@ if (mysqli_num_rows($result) > 0) {
             let row = document.getElementById(id);
             // row.classList.add("active");
             row.classList.toggle("active");
+<<<<<<< HEAD
         }
 
         // var sidebar_mediaQuery = windows.matchMedia('(max-width : 1200px');
@@ -304,6 +305,8 @@ if (mysqli_num_rows($result) > 0) {
             document.querySelector(".logo").style.display = "none";
             // sidebar.classList.toggle(".display"); 
             // sidebar.classList.toggle(".responsive-sidebar");            
+=======
+>>>>>>> 939bc8f10f30e348849160f8d8237787c0cefe5d
         }
         function hide_sidebar(){
             // var sidebar = document.querySelector('.sidebar');

@@ -380,9 +380,12 @@ button{
     body{
         flex-direction : column;
     }
+<<<<<<< HEAD
     .ADD button, .UPDATE button {
         padding : 1rem;
     }
+=======
+>>>>>>> 939bc8f10f30e348849160f8d8237787c0cefe5d
     .actions img {
         width : 40px;
         height : 40px;
@@ -455,6 +458,7 @@ button{
         display : none;
       background-color: #292C49;
     }
+<<<<<<< HEAD
 }
 
 @media only screen and (max-width: 670px){
@@ -477,6 +481,33 @@ button{
     }
 }
 
+=======
+
+   
+   
+}
+
+@media only screen and (max-width: 670px){
+    .Hide_Name {
+        display: none;
+    }
+    .actions img {
+        width : 40px;
+        height : 40px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .Hide_Cat {
+        display: none;
+    }
+    .actions img {
+        width : 30px;
+        height : 30px;
+    }
+}
+
+>>>>>>> 939bc8f10f30e348849160f8d8237787c0cefe5d
 @media only screen and (max-width: 440px){
     .Hide_Date {
         display: none;
@@ -486,6 +517,7 @@ button{
         width : 30px;
         height : 30px;
     }
+<<<<<<< HEAD
 }
 
 @media only screen and (max-width: 960px){
@@ -538,4 +570,6 @@ button{
         width : 30px;
         height : 30px;
     }
+=======
+>>>>>>> 939bc8f10f30e348849160f8d8237787c0cefe5d
 }
